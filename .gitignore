@@ -9,6 +9,9 @@ skills-lock.json
 CLAUDE.md
 docs/
 
+# Deploy script (contains credentials — local only)
+deploy.py
+
 # Archives (large, not needed in git)
 *.zip
 
