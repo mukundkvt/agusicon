@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hands-on Training Enrollment – AGUSICON 2026</title>
+  <meta name="description" content="Enroll for Hands-on Training at AGUSICON 2026, Bhadohi. Limited seats for PCNL C-Arm and TURP modules." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/style.css" />
+  <style>
+    /* ── Hero ── */
+    .hot-hero {
+      background: linear-gradient(135deg, #0b3d5e 0%, #115B86 60%, #1a7ca8 100%);
+      padding: 52px 0 44px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hot-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(48,174,195,.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hot-hero-inner { position: relative; max-width: 720px; }
+    .hot-hero-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.25);
+      color: #fff; font-size: .72rem; font-weight: 800; letter-spacing: .1em;
+      text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: 18px;
+    }
+    .hot-hero-tag .pulse {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: #4ade80; flex-shrink: 0;
+      animation: pulse-anim 1.5s ease infinite;
+    }
+    @keyframes pulse-anim { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.6;transform:scale(1.3)} }
+    .hot-hero h1 {
+      font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 800;
+      color: #fff; line-height: 1.2; margin-bottom: 12px;
+    }
+    .hot-hero-sub {
+      font-size: .92rem; color: rgba(255,255,255,.78); line-height: 1.7;
+    }
+    .hot-hero-chips {
+      display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px;
+    }
+    .hot-hero-chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2);
+      color: rgba(255,255,255,.88); font-size: .78rem; font-weight: 600;
+      padding: 6px 13px; border-radius: 8px;
+    }
+
+    /* ── Page body ── */
+    .hot-body { background: var(--bg-light); padding: 48px 0 80px; }
+    .hot-wrap { max-width: 720px; margin: 0 auto; }
+
+    /* ── Section card ── */
+    .hot-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 18px; padding: 28px 30px; margin-bottom: 20px;
+      box-shadow: 0 2px 16px rgba(17,91,134,.06);
+    }
+    .hot-card-label {
+      font-size: .68rem; font-weight: 800; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--secondary); margin-bottom: 14px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .hot-card-label::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+
+    /* ── Module selection cards ── */
+    .module-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .module-card {
+      border: 2px solid var(--border); border-radius: 14px;
+      padding: 20px 18px; cursor: pointer; transition: border-color .2s, box-shadow .2s, background .2s;
+      position: relative; user-select: none;
+    }
+    .module-card:hover { border-color: var(--secondary); box-shadow: 0 4px 20px rgba(48,174,195,.12); }
+    .module-card.selected { border-color: var(--primary); background: linear-gradient(135deg,#f0f8fd,#e8f4fb); box-shadow: 0 4px 24px rgba(17,91,134,.14); }
+    .module-card-num {
+      font-size: .65rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--text-muted); margin-bottom: 8px;
+    }
+    .module-card.selected .module-card-num { color: var(--secondary); }
+    .module-card-title { font-size: .92rem; font-weight: 800; color: var(--text); line-height: 1.4; margin-bottom: 12px; }
+    .module-card-fee {
+      font-size: 1.3rem; font-weight: 800; color: var(--primary);
+    }
+    .module-card-check {
+      position: absolute; top: 14px; right: 14px;
+      width: 22px; height: 22px; border-radius: 50%;
+      background: var(--border); display: flex; align-items: center; justify-content: center;
+      transition: background .2s;
+    }
+    .module-card.selected .module-card-check {
+      background: var(--primary);
+    }
+    .module-card.selected .module-card-check svg { display: block; }
+    .module-card-check svg { display: none; }
+
+    /* Seats warning */
+    .seats-warning {
+      display: flex; align-items: center; gap: 10px; margin-top: 16px;
+      background: #fff7ed; border: 1px solid #fed7aa; border-radius: 10px;
+      padding: 11px 14px; font-size: .82rem; color: #9a3412; font-weight: 600;
+    }
+
+    /* ── Form fields ── */
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-group label { font-size: .8rem; font-weight: 700; color: var(--text); }
+    .form-group label span { color: #e53e3e; }
+    .form-group input, .form-group select {
+      border: 1.5px solid var(--border); border-radius: 9px;
+      padding: 11px 14px; font-family: inherit; font-size: .88rem;
+      color: var(--text); background: var(--white); outline: none;
+      transition: border-color .18s, box-shadow .18s;
+    }
+    .form-group input:focus, .form-group select:focus {
+      border-color: var(--primary); box-shadow: 0 0 0 3px rgba(17,91,134,.1);
+    }
+    .form-group input[readonly] {
+      background: #f0f7fa; color: var(--primary); font-weight: 700; cursor: default;
+    }
+
+    /* ── Payment section ── */
+    .amount-display {
+      display: flex; align-items: center; justify-content: space-between;
+      background: linear-gradient(135deg,#f0f8fd,#e6f4fb);
+      border: 1.5px solid var(--secondary); border-radius: 12px;
+      padding: 16px 20px; margin-bottom: 24px;
+    }
+    .amount-label { font-size: .8rem; font-weight: 700; color: var(--text-muted); }
+    .amount-value { font-size: 1.6rem; font-weight: 800; color: var(--primary); }
+
+    .qr-section { text-align: center; margin-bottom: 24px; }
+    .qr-section-title { font-size: .78rem; font-weight: 700; color: var(--text-muted); margin-bottom: 14px; }
+
+    .upi-id-box {
+      margin-top: 16px; padding: 12px 16px;
+      background: var(--bg-light); border: 1px solid var(--border); border-radius: 10px;
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      flex-wrap: wrap;
+    }
+    .upi-id-inner { text-align: center; flex: 1; }
+    .upi-id-hint { font-size: .72rem; color: var(--text-muted); margin-bottom: 4px; }
+    .upi-id-value { font-size: .92rem; font-weight: 700; color: var(--primary); word-break: break-all; }
+    .upi-copy-btn {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 7px 14px; font-size: .77rem; font-weight: 600;
+      color: var(--primary); background: transparent;
+      border: 1.5px solid var(--primary); border-radius: 7px;
+      cursor: pointer; transition: background .18s, color .18s; flex-shrink: 0; font-family: inherit;
+    }
+    .upi-copy-btn:hover { background: var(--primary); color: #fff; }
+
+    /* File upload */
+    .file-upload-box {
+      border: 2px dashed var(--border); border-radius: 10px;
+      padding: 20px; text-align: center; cursor: pointer;
+      transition: border-color .2s, background .2s; position: relative;
+    }
+    .file-upload-box:hover { border-color: var(--secondary); background: #f0f9fa; }
+    .file-upload-box input[type=file] {
+      position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%;
+    }
+    .file-upload-icon { margin: 0 auto 8px; color: var(--text-muted); }
+    .file-upload-text { font-size: .83rem; color: var(--text-muted); }
+    .file-upload-text strong { color: var(--primary); }
+    .file-name-display { font-size: .8rem; color: var(--secondary); font-weight: 600; margin-top: 8px; }
+
+    /* Submit */
+    .btn-hot-submit {
+      width: 100%; padding: 16px; border: none; border-radius: 12px;
+      background: linear-gradient(135deg, #115B86 0%, #1a7ca8 100%);
+      color: #fff; font-family: inherit; font-size: 1rem; font-weight: 800;
+      cursor: pointer; transition: opacity .2s, transform .1s;
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      box-shadow: 0 6px 24px rgba(17,91,134,.28); letter-spacing: .02em;
+    }
+    .btn-hot-submit:hover { opacity: .92; transform: translateY(-1px); }
+    .btn-hot-submit:disabled { opacity: .55; cursor: default; transform: none; }
+
+    /* Success state */
+    .hot-success {
+      display: none; text-align: center; padding: 52px 24px;
+    }
+    .hot-success-icon {
+      width: 72px; height: 72px; background: #d1fae5; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; margin: 0 auto 22px;
+    }
+    .hot-success h3 { font-size: 1.3rem; font-weight: 800; color: var(--primary); margin-bottom: 12px; }
+    .hot-success p { font-size: .9rem; color: var(--text-muted); line-height: 1.7; max-width: 420px; margin: 0 auto; }
+
+    /* Error msg */
+    .hot-error {
+      display: none; background: #fff1f2; border: 1px solid #fecdd3;
+      border-radius: 10px; padding: 12px 16px; font-size: .85rem;
+      color: #be123c; font-weight: 600; margin-top: 12px;
+    }
+
+    @media (max-width: 600px) {
+      .module-grid { grid-template-columns: 1fr; }
+      .form-grid { grid-template-columns: 1fr; }
+      .hot-card { padding: 20px 18px; }
+      .upi-id-box { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../../index.html" class="nav-logo">
+        <div class=""><img class="nav-img" src="../../images/logo.png" alt="AGUSICON 2026" /></div>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../committee.html">Committee</a></li>
+        <li class="has-dropdown">
+          <a href="../events.html" class="active">
+            Events
+            <svg class="dropdown-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="nav-dropdown">
+            <span class="dropdown-section-label">Upcoming</span>
+            <a href="agusicon-2026-bhadohi.html" class="dropdown-item">
+              <div class="di-year upcoming">2026</div>
+              <div><div class="di-title">AGUSICON 2026</div><div class="di-sub">Bhadohi &middot; 25-26 July 2026</div></div>
+            </a>
+          </div>
+        </li>
+        <li><a href="../gallery.html">Gallery</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="agusicon-2026-bhadohi.html#registration" class="btn btn-Theme2026">Register Now</a>
+      </div>
+      <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<nav class="nav-mobile">
+  <button class="nav-mobile-close">&times;</button>
+  <a href="../../index.html">Home</a>
+  <a href="../about.html">About</a>
+  <a href="../committee.html">Committee</a>
+  <button class="nav-events-toggle" id="mobileEventsToggle">
+    Events
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+  <div class="nav-mobile-submenu" id="mobileEventsMenu">
+    <a href="../events.html">All Events</a>
+    <a href="agusicon-2026-bhadohi.html">AGUSICON 2026 – Bhadohi</a>
+  </div>
+  <a href="../gallery.html">Gallery</a>
+  <a href="../contact.html">Contact</a>
+  <a href="agusicon-2026-bhadohi.html#registration" style="color:#30AEC3;margin-top:12px;font-size:1rem">Register Now →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hot-hero">
+  <div class="container">
+    <div class="hot-hero-inner">
+      <div class="breadcrumb" style="justify-content:flex-start;margin-bottom:18px">
+        <a href="../../index.html" style="color:rgba(255,255,255,.65)">Home</a>
+        <span style="color:rgba(255,255,255,.4)">/</span>
+        <a href="agusicon-2026-bhadohi.html" style="color:rgba(255,255,255,.65)">AGUSICON 2026</a>
+        <span style="color:rgba(255,255,255,.4)">/</span>
+        <span style="color:rgba(255,255,255,.9)">Hands-on Training</span>
+      </div>
+      <div class="hot-hero-tag">
+        <span class="pulse"></span>
+        New Addition - Limited Seats
+      </div>
+      <h1>Hands-on Training Enrollment</h1>
+      <p class="hot-hero-sub">
+        Gain practical surgical skills under expert guidance at AGUSICON 2026, Bhadohi.
+        Two focused modules available - only 20 seats per module.
+      </p>
+      <div class="hot-hero-chips">
+        <span class="hot-hero-chip">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          25–26 July 2026
+        </span>
+        <span class="hot-hero-chip">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Blessing Garden, Bhadohi
+        </span>
+        <span class="hot-hero-chip">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          20 Seats Per Module
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM BODY -->
+<section class="hot-body">
+  <div class="container">
+    <div class="hot-wrap">
+
+      <form id="trainingForm" enctype="multipart/form-data" novalidate>
+
+        <!-- STEP 1: Module Selection -->
+        <div class="hot-card">
+          <div class="hot-card-label">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+            Step 1 - Select Module
+          </div>
+
+          <div class="module-grid">
+            <!-- Module 1 -->
+            <div class="module-card selected" id="mc-pcnl" onclick="selectModule('pcnl')">
+              <div class="module-card-check">
+                <svg width="12" height="12" fill="none" stroke="#fff" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="module-card-num">Module 1</div>
+              <div class="module-card-title">Initial Puncture for PCNL with C-Arm Control</div>
+              <div class="module-card-fee">&#8377;4,000</div>
+            </div>
+
+            <!-- Module 2 -->
+            <div class="module-card" id="mc-turp" onclick="selectModule('turp')">
+              <div class="module-card-check">
+                <svg width="12" height="12" fill="none" stroke="#fff" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="module-card-num">Module 2</div>
+              <div class="module-card-title">TURP (Transurethral Resection of Prostate)</div>
+              <div class="module-card-fee">&#8377;3,000</div>
+            </div>
+          </div>
+
+          <div class="seats-warning">
+            <svg width="16" height="16" fill="none" stroke="#c2410c" stroke-width="2.5" viewBox="0 0 24 24" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            Limited to <strong>&nbsp;20 seats per module&nbsp;</strong> — first come, first served.
+          </div>
+
+          <!-- Hidden inputs carrying the selected module data -->
+          <input type="hidden" name="module" id="moduleInput" value="Module 1 – Initial Puncture for PCNL with C-Arm Control" />
+          <input type="hidden" name="amount" id="amountInput" value="4000" />
+        </div>
+
+        <!-- STEP 2: Personal Details -->
+        <div class="hot-card">
+          <div class="hot-card-label">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            Step 2 &mdash; Your Details
+          </div>
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Full Name <span>*</span></label>
+              <input type="text" name="name" placeholder="Dr. Full Name" required />
+            </div>
+            <div class="form-group">
+              <label>Mobile Number <span>*</span></label>
+              <input type="tel" name="mobile" placeholder="+91 98765 43210" required />
+            </div>
+            <div class="form-group full">
+              <label>Email Address <span>*</span></label>
+              <input type="email" name="email" placeholder="your@email.com" required />
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 3: Payment -->
+        <div class="hot-card">
+          <div class="hot-card-label">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            Step 3 &mdash; Payment
+          </div>
+
+          <!-- Amount display -->
+          <div class="amount-display">
+            <div>
+              <div class="amount-label">Enrollment Fee — Selected Module</div>
+              <div id="moduleNameDisplay" style="font-size:.82rem;font-weight:600;color:var(--text);margin-top:3px">Module 1 – Initial Puncture for PCNL with C-Arm Control</div>
+            </div>
+            <div class="amount-value" id="amountDisplay">&#8377;4,000</div>
+          </div>
+
+          <!-- QR Code -->
+          <div class="qr-section">
+            <div class="qr-section-title">Scan via any UPI app — amount fills automatically</div>
+            <img id="hotQrImg" alt="UPI QR Code" style="width:190px;height:190px;display:block;margin:0 auto;border-radius:12px;border:1px solid var(--border);box-shadow:0 4px 16px rgba(17,91,134,.1);" />
+
+            <!-- UPI ID copy -->
+            <div class="upi-id-box">
+              <div class="upi-id-inner">
+                <div class="upi-id-hint">Or enter UPI ID manually in your app</div>
+                <div class="upi-id-value">0795307A0182926.bqr@kotak</div>
+              </div>
+              <button type="button" class="upi-copy-btn" id="hotCopyBtn" onclick="copyHotUpi()">
+                <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <!-- Payment details -->
+          <div class="form-grid">
+            <div class="form-group full">
+              <label>Payment Reference / UTR Number <span>*</span></label>
+              <input type="text" name="payment_ref" placeholder="12-digit UTR or UPI Ref No." required />
+            </div>
+            <div class="form-group full">
+              <label>Upload Payment Screenshot <span>*</span></label>
+              <div class="file-upload-box" id="fileUploadBox">
+                <input type="file" name="proof" id="proofFile" accept="image/jpeg,image/png,image/webp" required />
+                <div class="file-upload-icon">
+                  <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                </div>
+                <div class="file-upload-text"><strong>Click to upload</strong> or drag & drop</div>
+                <div class="file-upload-text" style="font-size:.74rem;margin-top:3px">JPEG / PNG / WEBP — max 5 MB</div>
+                <div class="file-name-display" id="fileNameDisplay"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hot-error" id="hotError"></div>
+
+        <button type="submit" class="btn-hot-submit" id="submitBtn">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Submit Enrollment
+        </button>
+
+      </form>
+
+      <!-- Success state -->
+      <div class="hot-card hot-success" id="hotSuccess">
+        <div class="hot-success-icon">
+          <svg width="34" height="34" fill="none" stroke="#059669" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3>Enrollment Submitted!</h3>
+        <p>Thank you for enrolling in the Hands-on Training at AGUSICON 2026. Your enrollment has been recorded and our team will confirm your seat within 24 hours via email or phone.</p>
+        <a href="agusicon-2026-bhadohi.html" style="display:inline-flex;align-items:center;gap:7px;margin-top:28px;background:var(--primary);color:#fff;padding:12px 28px;border-radius:10px;font-weight:700;text-decoration:none;font-size:.9rem">
+          ← Back to Event Page
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#0d2136;padding:40px 0 24px">
+  <div class="container">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:20px">
+      <div>
+        <img src="../../images/logo.png" alt="AGUSICON 2026" style="height:40px;opacity:.9" />
+      </div>
+      <div style="display:flex;gap:24px;flex-wrap:wrap">
+        <a href="agusicon-2026-bhadohi.html" style="color:rgba(255,255,255,.65);font-size:.83rem;text-decoration:none">← Event Home</a>
+        <a href="agusicon-2026-bhadohi.html#registration" style="color:rgba(255,255,255,.65);font-size:.83rem;text-decoration:none">Delegate Registration</a>
+        <a href="../contact.html" style="color:rgba(255,255,255,.65);font-size:.83rem;text-decoration:none">Contact</a>
+      </div>
+    </div>
+    <p style="font-size:.78rem;color:rgba(255,255,255,.45);text-align:center">&copy; 2026 Association of Genitourinary Surgeons of India (AGUSI) – UP Chapter of ASI. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="https://www.google.com/recaptcha/api.js?render=6LfrGiAtAAAAAB2jKYiWo5r5_dTEipv9tN6XfAWy"></script>
+<script>window.RECAPTCHA_SITE_KEY = '6LfrGiAtAAAAAB2jKYiWo5r5_dTEipv9tN6XfAWy';</script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+<script src="../../js/main.js"></script>
+
+<script>
+(function () {
+  const UPI_VPA  = '0795307A0182926.bqr@kotak';
+  const UPI_NAME = 'AGUSICON 2026';
+  const MODULES = {
+    pcnl: { label: 'Module 1 – Initial Puncture for PCNL with C-Arm Control', amount: 4000 },
+    turp: { label: 'Module 2 – TURP (Transurethral Resection of Prostate)',   amount: 3000 }
+  };
+
+  let qrInstance = null;
+
+  function updateQR(amount) {
+    var uri = 'upi://pay?pa=' + encodeURIComponent(UPI_VPA)
+            + '&pn=' + encodeURIComponent(UPI_NAME)
+            + '&am=' + amount
+            + '&cu=INR'
+            + '&tn=' + encodeURIComponent('AGUSICON Hands-on Training');
+    var img = document.getElementById('hotQrImg');
+    if (!img || typeof QRCode === 'undefined') return;
+    QRCode.toDataURL(uri, { width: 190, margin: 2 }, function (err, url) {
+      if (!err) img.src = url;
+    });
+  }
+
+  window.selectModule = function (key) {
+    var mod = MODULES[key];
+    document.getElementById('amountDisplay').innerHTML = '&#8377;' + mod.amount.toLocaleString('en-IN');
+    document.getElementById('amountInput').value  = mod.amount;
+    document.getElementById('moduleInput').value  = mod.label;
+    document.getElementById('moduleNameDisplay').textContent = mod.label;
+    document.querySelectorAll('.module-card').forEach(function (c) { c.classList.remove('selected'); });
+    document.getElementById('mc-' + key).classList.add('selected');
+    updateQR(mod.amount);
+  };
+
+  window.copyHotUpi = function () {
+    navigator.clipboard.writeText(UPI_VPA).then(function () {
+      var b = document.getElementById('hotCopyBtn');
+      b.innerHTML = '<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Copied!';
+      b.style.background = '#059669'; b.style.color = '#fff'; b.style.borderColor = '#059669';
+      setTimeout(function () {
+        b.innerHTML = '<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copy';
+        b.style.background = ''; b.style.color = ''; b.style.borderColor = '';
+      }, 2000);
+    });
+  };
+
+  // Show selected filename
+  document.getElementById('proofFile').addEventListener('change', function () {
+    var name = this.files[0] ? this.files[0].name : '';
+    document.getElementById('fileNameDisplay').textContent = name;
+  });
+
+  // Form submit
+  document.getElementById('trainingForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    var btn = document.getElementById('submitBtn');
+    var errEl = document.getElementById('hotError');
+    errEl.style.display = 'none';
+    btn.disabled = true;
+    btn.innerHTML = '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="animation:spin 1s linear infinite"><path d="M21 12a9 9 0 11-9-9 9 9 0 019 9z"/></svg> Submitting…';
+
+    var fd = new FormData(this);
+
+    // Block file:// protocol
+    if (location.protocol === 'file:') {
+      errEl.textContent = 'Please open via http://localhost/ — form submissions do not work over file://';
+      errEl.style.display = 'block';
+      btn.disabled = false;
+      btn.innerHTML = '<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Submit Enrollment';
+      return;
+    }
+
+    // reCAPTCHA
+    try {
+      if (window.RECAPTCHA_SITE_KEY && typeof grecaptcha !== 'undefined') {
+        var token = await new Promise(function (resolve, reject) {
+          grecaptcha.ready(function () {
+            grecaptcha.execute(window.RECAPTCHA_SITE_KEY, { action: 'training_enrollment' }).then(resolve).catch(reject);
+          });
+        });
+        if (token) fd.append('recaptcha_token', token);
+      }
+    } catch (_) {}
+
+    try {
+      var resp = await fetch('../../data/training-enrollment-handler.php', { method: 'POST', body: fd });
+      var data = await resp.json();
+      if (data.status === 'success') {
+        document.getElementById('trainingForm').style.display = 'none';
+        var s = document.getElementById('hotSuccess');
+        s.style.display = 'block';
+        s.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        errEl.textContent = data.message || 'Could not submit. Please try again.';
+        errEl.style.display = 'block';
+        btn.disabled = false;
+        btn.innerHTML = '<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Submit Enrollment';
+      }
+    } catch (err) {
+      errEl.textContent = 'Network error. Please check your connection and try again.';
+      errEl.style.display = 'block';
+      btn.disabled = false;
+      btn.innerHTML = '<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Submit Enrollment';
+    }
+  });
+
+  // Init QR on page load
+  document.addEventListener('DOMContentLoaded', function () {
+    updateQR(4000);
+  });
+  // Also try immediately (QRCode.js may already be loaded)
+  if (document.readyState !== 'loading') updateQR(4000);
+
+  // Spinner keyframe injection
+  var styleEl = document.createElement('style');
+  styleEl.textContent = '@keyframes spin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }';
+  document.head.appendChild(styleEl);
+})();
+</script>
+
+</body>
+</html>

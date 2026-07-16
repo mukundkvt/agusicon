@@ -1,0 +1,63 @@
+{
+  "event": "AGUSICON 2026",
+  "tiers": [
+    {
+      "id": "early_bird",
+      "label": "Early Bird",
+      "amount": 1100,
+      "description": "Early registration discount. Contact secretariat to confirm eligibility.",
+      "active": true
+    },
+    {
+      "id": "till_march",
+      "label": "Till 31 March 2026",
+      "amount": 2000,
+      "description": "Standard rate for registrations completed by 31 March 2026.",
+      "valid_until": "2026-03-31",
+      "active": true
+    },
+    {
+      "id": "april_june",
+      "label": "1 Apr – 30 Jun 2026",
+      "amount": 2500,
+      "description": "Standard rate for registrations from 1 April to 30 June 2026.",
+      "valid_from": "2026-04-01",
+      "valid_until": "2026-06-30",
+      "active": true
+    },
+    {
+      "id": "spot",
+      "label": "Spot Registration",
+      "amount": 3000,
+      "description": "On-site registration at the conference venue, subject to seat availability.",
+      "active": true
+    }
+  ],
+  "stalls": {
+    "premium": {
+      "label": "Premium Stall",
+      "amount": 250000
+    },
+    "stall_1_4": {
+      "label": "Stalls 1-4",
+      "amount": 100000,
+      "slots": 4
+    },
+    "stall_5_10": {
+      "label": "Stalls 5-10",
+      "amount": 80000,
+      "slots": 6
+    },
+    "stall_11_15": {
+      "label": "Stalls 11-15",
+      "amount": 60000,
+      "slots": 5
+    },
+    "stall_16_20": {
+      "label": "Stalls 16-20",
+      "amount": 50000,
+      "slots": 5
+    }
+  },
+  "updated_at": "2026-06-02"
+}

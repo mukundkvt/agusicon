@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery – AGUSICON 2026 | AGUSI</title>
+  <meta name="description" content="Photo gallery from AGUSICON events organised by the Association of Genitourinary Surgeons of India (AGUSI)." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .filter-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 32px 0;
+    }
+    .filter-btn {
+      padding: 8px 20px;
+      border-radius: 30px;
+      border: 1.5px solid var(--border);
+      background: var(--white);
+      font-size: .85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: var(--white);
+    }
+    .gallery-section-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 40px 0 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <div class="">
+          <img class="nav-img" src="../images/logo.png" />
+        </div>
+
+      </a>
+      <ul class="nav-menu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="committee.html">Committee</a></li>
+        <li class="has-dropdown">
+          <a href="events.html">
+            Events
+            <svg class="dropdown-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="nav-dropdown">
+            <span class="dropdown-section-label">Upcoming</span>
+            <a href="events/agusicon-2026-bhadohi.html" class="dropdown-item">
+              <div class="di-year upcoming">2026</div>
+              <div><div class="di-title">AGUSICON 2026</div><div class="di-sub">Bhadohi &middot; 25-26 July 2026</div></div>
+            </a>
+          </div>
+        </li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="events/agusicon-2026-bhadohi.html" class="btn btn-primary">Register Now</a>
+      </div>
+      <button class="nav-toggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<nav class="nav-mobile">
+  <button class="nav-mobile-close">&times;</button>
+  <a href="../index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="committee.html">Committee</a>
+  <button class="nav-events-toggle" id="mobileEventsToggle">
+    Events
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+  <div class="nav-mobile-submenu" id="mobileEventsMenu">
+    <a href="events.html">All Events</a>
+    <a href="events/agusicon-2026-bhadohi.html">AGUSICON 2026 – Bhadohi, 25-26 Jul 2026</a>
+  </div>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+  <a href="events/agusicon-2026-bhadohi.html" style="color:#30AEC3;margin-top:12px;font-size:1rem">Register for AGUSICON 2026 →</a>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a>
+      <span>/</span>
+      <span style="color:rgba(255,255,255,.9)">Gallery</span>
+    </div>
+    <h1>Event Gallery</h1>
+    <p>Moments captured from AGUSICON and AGUSI academic programmes.</p>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<section class="gallery-section">
+  <div class="container">
+
+    <div class="fade-up">
+      <div class="section-badge">Photo Gallery</div>
+      <h2 class="section-title">Highlights from Our Events</h2>
+    </div>
+
+    <div class="filter-tabs fade-up">
+      <button class="filter-btn active">All</button>
+      <button class="filter-btn">AGUSICON 2025</button>
+    </div>
+
+    <!-- AGUSICON 2025 -->
+    <h3 class="gallery-section-title fade-up">AGUSICON 2025 – Past Conference</h3>
+
+    <div class="gallery-grid stagger">
+      <div class="gallery-item" data-src="../images/gallery/1.jpeg">
+        <img src="../images/gallery/1.jpeg" alt="AGUSICON 2025 – Conference Highlights" loading="lazy" />
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+
+      <div class="gallery-item" data-src="../images/gallery/2.jpeg">
+        <img src="../images/gallery/2.jpeg" alt="AGUSICON 2025 – Scientific Sessions" loading="lazy" />
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+
+      <div class="gallery-item" data-src="../images/gallery/3.jpeg">
+        <img src="../images/gallery/3.jpeg" alt="AGUSICON 2025 – Faculty &amp; Delegates" loading="lazy" />
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+
+      <div class="gallery-item" data-src="../images/gallery/4.jpeg">
+        <img src="../images/gallery/4.jpeg" alt="AGUSICON 2025 – Workshop Session" loading="lazy" />
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+
+      <div class="gallery-item" data-src="../images/gallery/WhatsApp%20Image%202026-06-03%20at%2013.05.08.jpeg">
+        <img src="../images/gallery/WhatsApp%20Image%202026-06-03%20at%2013.05.08.jpeg" alt="AGUSICON 2025 – Event Moments" loading="lazy" />
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+
+      <div class="gallery-item" data-src="../images/gallery/WhatsApp%20Image%202026-06-03%20at%2013.05.08%20(1).jpeg">
+        <img src="../images/gallery/WhatsApp%20Image%202026-06-03%20at%2013.05.08%20(1).jpeg" alt="AGUSICON 2025 – Event Moments" loading="lazy" />
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+
+      <div class="gallery-item" data-src="../images/gallery/WhatsApp%20Image%202026-06-03%20at%2013.05.09.jpeg">
+        <img src="../images/gallery/WhatsApp%20Image%202026-06-03%20at%2013.05.09.jpeg" alt="AGUSICON 2025 – Academic Session" loading="lazy" />
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+
+      <div class="gallery-item" data-src="../images/gallery/WhatsApp%20Image%202026-06-03%20at%2013.05.11.jpeg">
+        <img src="../images/gallery/WhatsApp%20Image%202026-06-03%20at%2013.05.11.jpeg" alt="AGUSICON 2025 – Academic Session" loading="lazy" />
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+
+      <div class="gallery-item" data-src="../images/gallery/WhatsApp%20Image%202026-06-03%20at%2013.05.12.jpeg">
+        <img src="../images/gallery/WhatsApp%20Image%202026-06-03%20at%2013.05.12.jpeg" alt="AGUSICON 2025 – Delegates &amp; Faculty" loading="lazy" />
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+
+      <div class="gallery-item" data-src="../images/gallery/WhatsApp%20Image%202026-06-03%20at%2013.05.14.jpeg">
+        <img src="../images/gallery/WhatsApp%20Image%202026-06-03%20at%2013.05.14.jpeg" alt="AGUSICON 2025 – Delegates &amp; Faculty" loading="lazy" />
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+
+      <div class="gallery-item" data-src="../images/gallery/WhatsApp%20Image%202026-06-03%20at%2013.05.15.jpeg">
+        <img src="../images/gallery/WhatsApp%20Image%202026-06-03%20at%2013.05.15.jpeg" alt="AGUSICON 2025 – Ceremony" loading="lazy" />
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+
+      <div class="gallery-item" data-src="../images/gallery/WhatsApp%20Image%202026-06-03%20at%2013.05.16.jpeg">
+        <img src="../images/gallery/WhatsApp%20Image%202026-06-03%20at%2013.05.16.jpeg" alt="AGUSICON 2025 – Ceremony" loading="lazy" />
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+
+      <div class="gallery-item" data-src="../images/gallery/WhatsApp%20Image%202026-06-03%20at%2013.05.17.jpeg">
+        <img src="../images/gallery/WhatsApp%20Image%202026-06-03%20at%2013.05.17.jpeg" alt="AGUSICON 2025 – Conference Moments" loading="lazy" />
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+
+      <div class="gallery-item" data-src="../images/gallery/WhatsApp%20Image%202026-06-03%20at%2013.05.17%20(1).jpeg">
+        <img src="../images/gallery/WhatsApp%20Image%202026-06-03%20at%2013.05.17%20(1).jpeg" alt="AGUSICON 2025 – Conference Moments" loading="lazy" />
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+
+      <div class="gallery-item" data-src="../images/gallery/WhatsApp%20Image%202026-06-03%20at%2013.05.18.jpeg">
+        <img src="../images/gallery/WhatsApp%20Image%202026-06-03%20at%2013.05.18.jpeg" alt="AGUSICON 2025 – Valedictory" loading="lazy" />
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox">
+  <button id="lightbox-close" aria-label="Close">&times;</button>
+  <button id="lightbox-prev" aria-label="Previous">&#8592;</button>
+  <img id="lightbox-img" src="" alt="Gallery image enlarged" />
+  <button id="lightbox-next" aria-label="Next">&#8594;</button>
+</div>
+
+<!-- CTA -->
+<section style="background:var(--primary);padding:64px 0">
+  <div class="container text-center">
+    <h2 style="color:#fff;font-size:1.8rem;font-weight:800;margin-bottom:14px">Join Us at AGUSICON 2026</h2>
+    <p style="color:rgba(255,255,255,.75);margin-bottom:32px;max-width:440px;margin-left:auto;margin-right:auto">
+      Be part of the national conference of AGUSI. Register for AGUSICON 2026, Bhadohi – 25-26 July 2026.
+    </p>
+    <a href="events/agusicon-2026-bhadohi.html" class="btn btn-outline">Register Now</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div style="display:flex;align-items:center;gap:10px">
+          <a href="../index.html" class="nav-logo">
+            <div class="">
+              <img class="nav-img" src="../images/logo.png" />
+            </div>
+          </a>
+        </div>
+        <p style="margin-top:14px">
+          National Conference of the Association of Genitourinary Surgeons of India (AGUSI). Organised by the UP Chapter of ASI. Bhadohi, Uttar Pradesh – 25-26 July 2026.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="about.html">About AGUSI</a></li>
+          <li><a href="committee.html">Committee</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>AGUSICON 2026</h4>
+        <ul>
+          <li><a href="events/agusicon-2026-bhadohi.html">Conference Details</a></li>
+          <li><a href="events/agusicon-2026-bhadohi.html#registration">Register Now</a></li>
+          <li><a href="events.html">All Events</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+919936042720">+91 9936042720</a></li>
+          <li><a href="tel:+917838768692">+91 7838768692</a></li>
+          <li><a href="contact.html">Contact Form</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Association of Genitourinary Surgeons of India (AGUSI) – UP Chapter of ASI. All rights reserved.</p>
+      <div class="social-links">
+        <a href="#" class="social-link"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a href="#" class="social-link"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="#" class="social-link"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+      </div>
+      <p>Website Development Agency Varanasi - <a href="https://kvtmedia.com" target="_blank"> KV TechMedia </a> </p>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

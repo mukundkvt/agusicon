@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Organising Committee – AGUSICON 2026 | AGUSI</title>
+    <meta name="description" content="Meet the Leadership, Advisory Board, Organising Committee and National Faculty of AGUSICON 2026 – the National Conference of AGUSI, Bhadohi, UP." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      /* ── Sticky section nav ── */
+      .section-tabs { display:flex;gap:8px;flex-wrap:wrap;margin:0 0 48px;padding:20px 0 0; }
+      .section-tab { padding:8px 18px;border-radius:30px;border:1.5px solid var(--border);background:var(--white);font-size:.83rem;font-weight:600;color:var(--text-muted);cursor:pointer;text-decoration:none;transition:var(--transition); }
+      .section-tab:hover,.section-tab.active { background:var(--primary);border-color:var(--primary);color:#fff; }
+
+      /* ── Leader cards (photo-style, no photo) ── */
+      .leader-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:24px;margin-top:32px; }
+      .leader-card { background:var(--white);border:1px solid var(--border);border-radius:18px;padding:32px 24px 28px;text-align:center;box-shadow:var(--shadow-sm);transition:var(--transition); }
+      .leader-card:hover { transform:translateY(-5px);box-shadow:var(--shadow-lg); }
+      .leader-avatar { width:72px;height:72px;border-radius:50%;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;font-weight:800;color:#fff;letter-spacing:.04em; }
+      .leader-card .lc-role { font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:4px 12px;border-radius:20px;display:inline-block;margin-bottom:10px; }
+      .lc-role-president { background:#eff6ff;color:var(--primary); }
+      .lc-role-secretary { background:#f5f3ff;color:#6d5bd0; }
+      .lc-role-treasurer { background:#f0fdf4;color:#065f46; }
+      .lc-role-advisory { background:#fef3c7;color:#92400e; }
+      .lc-role-organising { background:#e0f7fa;color:#115B86; }
+      .leader-card .lc-name { font-size:1rem;font-weight:700;color:var(--primary);margin-bottom:4px; }
+      .leader-card .lc-org { font-size:.8rem;color:var(--text-muted);line-height:1.55; }
+
+      /* ── Section heading ── */
+      .committee-section-head { margin:64px 0 0; }
+      .committee-section-head h3 { font-size:1.2rem;font-weight:800;color:var(--primary);margin-bottom:4px; }
+      .committee-section-head p { font-size:.875rem;color:var(--text-muted); }
+      .section-rule { border:none;border-top:2px solid var(--border);margin:14px 0 28px; }
+
+      /* ── Role sub-groups ── */
+      .role-group { margin-bottom:28px; }
+      .role-group-label { font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--secondary);margin-bottom:10px; }
+
+      /* ── Key role cards (Patron / Chairperson single row) ── */
+      .key-role-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px; }
+      .key-role-card { display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--white);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow-sm); }
+      .key-role-avatar { width:44px;height:44px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:800;color:#fff; }
+      .key-role-card .krc-name { font-size:.875rem;font-weight:700;color:var(--primary);line-height:1.3; }
+      .key-role-card .krc-role { font-size:.75rem;color:var(--text-muted); }
+
+      /* ── Member cards (sub-committees + faculty) ── */
+      .member-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;margin-top:8px; }
+      .member-card { background:var(--white);border:1px solid var(--border);border-radius:12px;padding:16px 12px 14px;text-align:center; }
+      .member-avatar { width:46px;height:46px;border-radius:50%;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:800;color:#fff;letter-spacing:.03em; }
+      .member-name { font-size:.8rem;font-weight:700;color:var(--primary);line-height:1.35; }
+    </style>
+  </head>
+  <body>
+
+    <!-- NAVBAR -->
+    <nav id="navbar">
+      <div class="container">
+        <div class="nav-inner">
+          <a href="../index.html" class="nav-logo">
+            <div class=""><img class="nav-img" src="../images/logo.png" /></div>
+          </a>
+          <ul class="nav-menu">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="committee.html" class="active">Committee</a></li>
+            <li class="has-dropdown">
+              <a href="events.html">
+                Events
+                <svg class="dropdown-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </a>
+              <div class="nav-dropdown">
+                <span class="dropdown-section-label">Upcoming</span>
+                <a href="events/agusicon-2026-bhadohi.html" class="dropdown-item">
+                  <div class="di-year upcoming">2026</div>
+                  <div><div class="di-title">AGUSICON 2026</div><div class="di-sub">Bhadohi &middot; 25-26 July 2026</div></div>
+                </a>
+              </div>
+            </li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <div class="nav-cta">
+            <a href="events/agusicon-2026-bhadohi.html" class="btn btn-primary">Register Now</a>
+          </div>
+          <button class="nav-toggle" aria-label="Open menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <nav class="nav-mobile">
+      <button class="nav-mobile-close">&times;</button>
+      <a href="../index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="committee.html">Committee</a>
+      <button class="nav-events-toggle" id="mobileEventsToggle">
+        Events
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="nav-mobile-submenu" id="mobileEventsMenu">
+        <a href="events.html">All Events</a>
+        <a href="events/agusicon-2026-bhadohi.html">AGUSICON 2026 – Bhadohi, 25-26 Jul 2026</a>
+      </div>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+      <a href="events/agusicon-2026-bhadohi.html" style="color:#30AEC3;margin-top:12px;font-size:1rem">Register for AGUSICON 2026 →</a>
+    </nav>
+
+    <!-- PAGE HERO -->
+    <div class="page-hero">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="../index.html">Home</a>
+          <span>/</span>
+          <span style="color:rgba(255,255,255,.9)">Committee</span>
+        </div>
+        <h1>Organising Committee – AGUSICON 2026</h1>
+        <p>Leadership, advisory board, organising team and national faculty for AGUSICON 2026, Bhadohi, 25–26 July 2026.</p>
+      </div>
+    </div>
+
+    <!-- COMMITTEE -->
+    <section style="background:var(--bg-light);padding:80px 0">
+      <div class="container">
+
+        <!-- Section tabs -->
+        <div class="section-tabs fade-up">
+          <a href="#leadership" class="section-tab active">AGUSI Leadership</a>
+          <a href="#advisory" class="section-tab">Advisory</a>
+          <a href="#organising" class="section-tab">Organising Committee</a>
+          <a href="#faculty" class="section-tab">National Faculty</a>
+        </div>
+
+        <!-- ══ AGUSI LEADERSHIP TEAM ══ -->
+        <div id="leadership" class="fade-up">
+          <div class="section-badge">AGUSI National</div>
+          <h2 class="section-title">AGUSI Leadership Team</h2>
+          <p class="section-subtitle" style="margin:0 auto 0">Office-bearers of the Association of Genitourinary Surgeons of India leading AGUSICON 2026.</p>
+        </div>
+
+        <div class="leader-grid">
+          <div class="leader-card">
+            <div class="leader-avatar" style="background:linear-gradient(135deg,var(--primary),#1a7a9c)">AG</div>
+            <span class="lc-role lc-role-president">President, AGUSI</span>
+            <div class="lc-name">Dr. Achal Gupta (MS)</div>
+            <div class="lc-org">Professor &amp; Head, Department of Surgery</div>
+          </div>
+          <div class="leader-card">
+            <div class="leader-avatar" style="background:linear-gradient(135deg,#6d5bd0,#8b7de0)">KSY</div>
+            <span class="lc-role lc-role-secretary">Secretary, AGUSI</span>
+            <div class="lc-name">Dr. Kartar Singh Yadav (MS)</div>
+            <div class="lc-org">Shanti Yadav Hospital, Rewari, Haryana</div>
+          </div>
+          <div class="leader-card">
+            <div class="leader-avatar" style="background:linear-gradient(135deg,#065f46,#059669)">GCS</div>
+            <span class="lc-role lc-role-treasurer">Treasurer, AGUSI</span>
+            <div class="lc-name">Dr. G. Chandra Shekhar (MS)</div>
+            <div class="lc-org">AGUSI National Treasurer</div>
+          </div>
+          <div class="leader-card">
+            <div class="leader-avatar" style="background:linear-gradient(135deg,#115B86,var(--secondary))">AKG</div>
+            <span class="lc-role lc-role-organising">Organising Secretary</span>
+            <div class="lc-name">Dr. A. K. Gupta (MS)</div>
+            <div class="lc-org">Organising Secretary, AGUSICON 2026</div>
+          </div>
+        </div>
+
+        <!-- ══ ADVISORY LEADERSHIP ══ -->
+        <div id="advisory" class="committee-section-head fade-up">
+          <div class="section-badge">Advisory</div>
+          <h3>Advisory Leadership</h3>
+          <p>Distinguished national surgery leaders guiding AGUSICON 2026.</p>
+        </div>
+        <hr class="section-rule" />
+
+        <div class="leader-grid">
+          <div class="leader-card">
+            <div class="leader-avatar" style="background:linear-gradient(135deg,#92400e,#d97706)">PN</div>
+            <span class="lc-role lc-role-advisory">Past President, ASI</span>
+            <div class="lc-name">Prof. Dr. Probal Neogi (MS, FRCS)</div>
+            <div class="lc-org">Also: National Faculty, AGUSICON 2026</div>
+          </div>
+          <div class="leader-card">
+            <div class="leader-avatar" style="background:linear-gradient(135deg,#92400e,#d97706)">NS</div>
+            <span class="lc-role lc-role-advisory">President, UPASI</span>
+            <div class="lc-name">Dr. Nikhil Singh (MS)</div>
+            <div class="lc-org">UP Association of Surgeons of India</div>
+          </div>
+          <div class="leader-card">
+            <div class="leader-avatar" style="background:linear-gradient(135deg,#92400e,#d97706)">AA</div>
+            <span class="lc-role lc-role-advisory">Secretary, UPASI</span>
+            <div class="lc-name">Dr. Akshay Anand (MS)</div>
+            <div class="lc-org">UP Association of Surgeons of India</div>
+          </div>
+        </div>
+
+        <!-- ══ ORGANISING COMMITTEE ══ -->
+        <div id="organising" class="committee-section-head fade-up">
+          <div class="section-badge">AGUSICON 2026</div>
+          <h3>Organising Committee</h3>
+          <p>Local organising committee for AGUSICON 2026, Bhadohi.</p>
+        </div>
+        <hr class="section-rule" />
+
+        <!-- Key Roles -->
+        <div class="role-group">
+          <div class="role-group-label">Patron &amp; Chairs</div>
+          <div class="key-role-grid">
+            <div class="key-role-card">
+              <div class="key-role-avatar" style="background:linear-gradient(135deg,var(--primary),#1a7a9c)">VPS</div>
+              <div>
+                <div class="krc-role">Patron</div>
+                <div class="krc-name">Dr. Vinod Prakash Singh</div>
+              </div>
+            </div>
+            <div class="key-role-card">
+              <div class="key-role-avatar" style="background:linear-gradient(135deg,#6d5bd0,#8b7de0)">RKP</div>
+              <div>
+                <div class="krc-role">Organising Chairperson</div>
+                <div class="krc-name">Dr. R. K. Patel (MS)</div>
+              </div>
+            </div>
+            <div class="key-role-card">
+              <div class="key-role-avatar" style="background:linear-gradient(135deg,#115B86,var(--secondary))">AKG</div>
+              <div>
+                <div class="krc-role">Organising Secretary</div>
+                <div class="krc-name">Dr. A. K. Gupta (MS)</div>
+              </div>
+            </div>
+            <div class="key-role-card">
+              <div class="key-role-avatar" style="background:linear-gradient(135deg,#065f46,#059669)">AR</div>
+              <div>
+                <div class="krc-role">Treasurer</div>
+                <div class="krc-name">Dr. A. Rehman (MS)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Co-Organising Chairmen -->
+        <div class="role-group">
+          <div class="role-group-label">Co-Organising Chairmen</div>
+          <div class="member-grid">
+            <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#115B86,#30AEC3)">AD</div><div class="member-name">Dr. Ajay Dubey</div></div>
+            <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#115B86,#30AEC3)">ST</div><div class="member-name">Dr. Sanjay Tiwari</div></div>
+            <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#115B86,#30AEC3)">VG</div><div class="member-name">Dr. Vidhu Gupta</div></div>
+            <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#115B86,#30AEC3)">SG</div><div class="member-name">Dr. Shalini Gupta</div></div>
+          </div>
+        </div>
+
+        <!-- Joint Organising Secretaries -->
+        <div class="role-group">
+          <div class="role-group-label">Joint Organising Secretaries</div>
+          <div class="member-grid">
+            <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#6d5bd0,#8b7de0)">GY</div><div class="member-name">Dr. Ganesh Yadav</div></div>
+            <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#6d5bd0,#8b7de0)">AV</div><div class="member-name">Dr. Anand Vinay Srivastava</div></div>
+            <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#6d5bd0,#8b7de0)">SA</div><div class="member-name">Dr. Srijan Agrawal</div></div>
+          </div>
+        </div>
+
+        <!-- Scientific Committee -->
+        <div class="role-group">
+          <div class="role-group-label">Scientific Committee</div>
+          <div class="member-grid">
+            <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#c2410c,#f97316)">SI</div><div class="member-name">Prof. Dr. S. I. Siddique</div></div>
+            <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#c2410c,#f97316)">AM</div><div class="member-name">Dr. Alok Maurya</div></div>
+            <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#c2410c,#f97316)">PJ</div><div class="member-name">Dr. Piyush Jaiswal</div></div>
+            <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#c2410c,#f97316)">SU</div><div class="member-name">Dr. Santosh Umar</div></div>
+          </div>
+        </div>
+
+        <!-- Registration Committee -->
+        <div class="role-group">
+          <div class="role-group-label">Registration Committee</div>
+          <div class="member-grid">
+            <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#0f766e,#14b8a6)">CH</div><div class="member-name">Dr. Chinmay Harsh</div></div>
+            <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#0f766e,#14b8a6)">AM</div><div class="member-name">Dr. Ajit Maurya</div></div>
+          </div>
+        </div>
+
+        <!-- Executive Members -->
+        <div class="role-group">
+          <div class="role-group-label">Executive Members</div>
+          <div class="member-grid">
+            <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#1e3a8a,#3b82f6)">PS</div><div class="member-name">Dr. Pradeep Singh</div></div>
+            <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#1e3a8a,#3b82f6)">SG</div><div class="member-name">Dr. Shushil Gupta</div></div>
+            <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#1e3a8a,#3b82f6)">AG</div><div class="member-name">Dr. Alok Gupta</div></div>
+            <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#1e3a8a,#3b82f6)">PY</div><div class="member-name">Dr. Pranav Yadav</div></div>
+            <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#1e3a8a,#3b82f6)">NK</div><div class="member-name">Dr. N. A. Khan</div></div>
+            <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#1e3a8a,#3b82f6)">KP</div><div class="member-name">Dr. K. P. Jaiswal</div></div>
+            <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#1e3a8a,#3b82f6)">RM</div><div class="member-name">Dr. Rajesh Mishra</div></div>
+            <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#1e3a8a,#3b82f6)">JM</div><div class="member-name">Dr. Jayant Mathur</div></div>
+            <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#1e3a8a,#3b82f6)">MA</div><div class="member-name">Dr. Mumtaz Ahmad</div></div>
+            <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#1e3a8a,#3b82f6)">HK</div><div class="member-name">Dr. H. Khan</div></div>
+          </div>
+        </div>
+
+        <!-- Reception & Hospitality -->
+        <div class="role-group">
+          <div class="role-group-label">Reception &amp; Hospitality Committee</div>
+          <div class="member-grid">
+            <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#7c3aed,#a855f7)">KG</div><div class="member-name">Dr. Kiran Gupta</div></div>
+            <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#7c3aed,#a855f7)">PL</div><div class="member-name">Dr. Premlata</div></div>
+            <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#7c3aed,#a855f7)">SY</div><div class="member-name">Dr. Sushila Yadav</div></div>
+            <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#7c3aed,#a855f7)">SM</div><div class="member-name">Dr. Suman Mishra</div></div>
+          </div>
+        </div>
+
+        <!-- Conference Convenors -->
+        <div class="role-group">
+          <div class="role-group-label">Conference Convenors</div>
+          <div class="member-grid">
+            <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#9f1239,#e11d48)">AY</div><div class="member-name">Dr. Ashutosh Yadav</div></div>
+            <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#9f1239,#e11d48)">AM</div><div class="member-name">Dr. Ajit Maurya</div></div>
+            <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#9f1239,#e11d48)">BP</div><div class="member-name">Dr. Brijesh Prasad</div></div>
+            <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#9f1239,#e11d48)">KS</div><div class="member-name">Dr. K. S. Mishra</div></div>
+            <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#9f1239,#e11d48)">SK</div><div class="member-name">Dr. S. K. Baranwal</div></div>
+          </div>
+        </div>
+
+        <!-- ══ NATIONAL FACULTY ══ -->
+        <div id="faculty" class="committee-section-head fade-up">
+          <div class="section-badge">Speakers &amp; Faculty</div>
+          <h3>National Faculty</h3>
+          <p>Distinguished faculty presenting at AGUSICON 2026 from across India.</p>
+        </div>
+        <hr class="section-rule" />
+
+        <div class="member-grid" style="grid-template-columns:repeat(auto-fill,minmax(145px,1fr))">
+          <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#115B86,#30AEC3)">PN</div><div class="member-name">Prof. Dr. Probal Neogi</div></div>
+          <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#115B86,#30AEC3)">AG</div><div class="member-name">Dr. Achal Gupta</div></div>
+          <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#115B86,#30AEC3)">KS</div><div class="member-name">Dr. Kartar Singh Yadav</div></div>
+          <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#115B86,#30AEC3)">PG</div><div class="member-name">Prof. Dr. Puneet Gupta</div></div>
+          <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#115B86,#30AEC3)">SK</div><div class="member-name">Prof. Dr. S. K. Bhartiya</div></div>
+          <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#115B86,#30AEC3)">MA</div><div class="member-name">Prof. Dr. Mumtaz Ansari</div></div>
+          <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#115B86,#30AEC3)">VS</div><div class="member-name">Prof. Dr. Vaibhav Srivastava</div></div>
+          <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#115B86,#30AEC3)">SA</div><div class="member-name">Prof. Dr. Shabi Ahmad</div></div>
+          <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#115B86,#30AEC3)">MJ</div><div class="member-name">Prof. Dr. Mohit Jain</div></div>
+          <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#115B86,#30AEC3)">DM</div><div class="member-name">Dr. D. M. Pramanik</div></div>
+          <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#115B86,#30AEC3)">JI</div><div class="member-name">Dr. Javed Iqbal</div></div>
+          <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#115B86,#30AEC3)">KS</div><div class="member-name">Dr. Kamal Singh</div></div>
+          <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#115B86,#30AEC3)">RS</div><div class="member-name">Dr. Rajneesh Srivastava</div></div>
+          <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#115B86,#30AEC3)">SC</div><div class="member-name">Dr. Sanjay Chaubey</div></div>
+          <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#115B86,#30AEC3)">AR</div><div class="member-name">Dr. Anand Rai Bansal</div></div>
+          <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#115B86,#30AEC3)">SK</div><div class="member-name">Dr. Sudish Kumar</div></div>
+          <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#115B86,#30AEC3)">AB</div><div class="member-name">Dr. Ashish Bohra</div></div>
+          <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#115B86,#30AEC3)">SG</div><div class="member-name">Dr. Sanjay Goel</div></div>
+          <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#115B86,#30AEC3)">GC</div><div class="member-name">Dr. G. Chandra Shekhar</div></div>
+          <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#115B86,#30AEC3)">HO</div><div class="member-name">Dr. Hari Om Yadav</div></div>
+          <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#115B86,#30AEC3)">NS</div><div class="member-name">Dr. Niraj Srivastava</div></div>
+          <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#115B86,#30AEC3)">DK</div><div class="member-name">Dr. Devinder Kumar Verma</div></div>
+          <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#115B86,#30AEC3)">NA</div><div class="member-name">Dr. Nivesh Aggarwal</div></div>
+          <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#115B86,#30AEC3)">AA</div><div class="member-name">Dr. Amit Agarwal</div></div>
+          <div class="member-card"><div class="member-avatar" style="background:linear-gradient(135deg,#115B86,#30AEC3)">SG</div><div class="member-name">Dr. Sanjay Gupta</div></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section style="background:var(--primary);padding:64px 0">
+      <div class="container text-center">
+        <h2 style="color:#fff;font-size:1.8rem;font-weight:800;margin-bottom:14px">Register for AGUSICON 2026</h2>
+        <p style="color:rgba(255,255,255,.75);margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto">
+          Join these distinguished faculty and colleagues at Blessing Garden, Bhadohi – 25–26 July 2026.
+        </p>
+        <a href="events/agusicon-2026-bhadohi.html" class="btn btn-outline">Register Now</a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div style="display:flex;align-items:center;gap:10px">
+              <a href="../index.html" class="nav-logo">
+                <div class=""><img class="nav-img" src="../images/logo.png" /></div>
+              </a>
+            </div>
+            <p style="margin-top:14px">
+              National Conference of the Association of Genitourinary Surgeons of India (AGUSI). Organised by the UP Chapter of ASI. Bhadohi, Uttar Pradesh – 25-26 July 2026.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="about.html">About AGUSI</a></li>
+              <li><a href="committee.html">Committee</a></li>
+              <li><a href="events.html">Events</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>AGUSICON 2026</h4>
+            <ul>
+              <li><a href="events/agusicon-2026-bhadohi.html">Conference Details</a></li>
+              <li><a href="events/agusicon-2026-bhadohi.html#registration">Register Now</a></li>
+              <li><a href="events.html">All Events</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <ul>
+              <li><a href="tel:+919936042720">+91 9936042720</a></li>
+              <li><a href="tel:+917838768692">+91 7838768692</a></li>
+              <li><a href="mailto:agusicon2025@gmail.com">agusicon2025@gmail.com</a></li>
+              <li><a href="contact.html">Contact Form</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 Association of Genitourinary Surgeons of India (AGUSI) – UP Chapter of ASI. All rights reserved.</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+            <a href="#" class="social-link"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="#" class="social-link"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+          </div>
+          <p>Website Development Agency Varanasi - <a href="https://kvtmedia.com" target="_blank"> KV TechMedia </a></p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+      document.querySelectorAll('.section-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          document.querySelectorAll('.section-tab').forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+        });
+      });
+    </script>
+  </body>
+</html>

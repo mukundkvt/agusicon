@@ -1,0 +1,23 @@
+# OS / IDE
+.DS_Store
+Thumbs.db
+
+# Claude / project meta
+.agents/
+.claude/
+skills-lock.json
+CLAUDE.md
+docs/
+
+# Archives (large, not needed in git)
+*.zip
+
+# Live data — CSV logs, uploads (managed on server, not committed)
+data/*.csv
+data/uploads/
+data/registration-sequence-*.txt
+pages/uploads/
+pages/registration-sequence-*.txt
+pages/registrationleads.csv
+pages/registration-payments.csv
+pages/registrations-combined.csv

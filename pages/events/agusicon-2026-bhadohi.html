@@ -1,0 +1,1741 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AGUSICON 2026 – Bhadohi, UP | National Conference of AGUSI</title>
+  <meta name="description" content="Register for AGUSICON 2026, the National Conference of the Association of Genitourinary Surgeons of India, 25-26 July 2026 at Blessing Garden, Bhadohi, Uttar Pradesh." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/style.css" />
+  <style>
+    /* ── Returning-delegate resume card ── */
+    .reg-resume-card { background:#fffbeb;border:1.5px solid #fcd34d;border-radius:14px;padding:20px 22px 18px;margin-bottom:28px;box-shadow:0 2px 12px rgba(251,191,36,.13); }
+    .reg-resume-card-top { display:flex;align-items:flex-start;gap:14px; }
+    .reg-resume-card-icon { width:40px;height:40px;flex-shrink:0;background:#fef3c7;border:1.5px solid #fcd34d;border-radius:10px;display:flex;align-items:center;justify-content:center; }
+    .reg-resume-card-body { flex:1;min-width:0; }
+    .reg-resume-card-label { font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#b45309;margin-bottom:4px; }
+    .reg-resume-card-name { font-size:1rem;font-weight:800;color:#1c1917;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis; }
+    .reg-resume-card-id { font-family:monospace;font-size:.82rem;color:#92400e;background:#fef3c7;border:1px solid #fde68a;padding:2px 8px;border-radius:5px;display:inline-block; }
+    .reg-resume-card-dismiss { background:none;border:none;cursor:pointer;color:#d97706;font-size:1rem;padding:4px;border-radius:6px;line-height:1;flex-shrink:0;margin-top:-2px;transition:background .15s; }
+    .reg-resume-card-dismiss:hover { background:#fde68a; }
+    .reg-resume-card-divider { border:none;border-top:1px solid #fde68a;margin:14px 0 16px; }
+    .reg-resume-card-footer { display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap; }
+    .reg-resume-card-hint { font-size:.8rem;color:#92400e;line-height:1.5;flex:1; }
+    .btn-resume-continue { display:inline-flex;align-items:center;gap:7px;background:linear-gradient(135deg,#d97706,#f59e0b);color:#fff;border:none;border-radius:9px;padding:10px 22px;font-family:inherit;font-size:.88rem;font-weight:700;cursor:pointer;white-space:nowrap;box-shadow:0 2px 10px rgba(217,119,6,.30);transition:opacity .18s; }
+    .btn-resume-continue:hover { opacity:.88; }
+    /* Fee tier info badge */
+    .fee-tier-info { background: #e0f7fa; border: 1px solid #b2ebf2; border-radius: 8px; padding: 10px 14px; margin-bottom: 16px; font-size: 0.85rem; color: #115B86; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+    .fee-tier-info svg { flex-shrink: 0; }
+
+    /* ── Scientific Programme ── */
+    .prog-tabs { display:flex;gap:0;border-radius:12px;overflow:hidden;border:1.5px solid var(--border);margin-bottom:20px; }
+    .prog-tab { flex:1;background:var(--white);border:none;cursor:pointer;padding:15px 20px;text-align:left;font-family:inherit;transition:background .2s,color .2s;border-right:1.5px solid var(--border); }
+    .prog-tab:last-child { border-right:none; }
+    .prog-tab.active { background:var(--primary); }
+    .prog-tab-date { display:block;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:3px; }
+    .prog-tab.active .prog-tab-date { color:rgba(255,255,255,.65); }
+    .prog-tab-label { display:block;font-size:.92rem;font-weight:700;color:var(--text); }
+    .prog-tab.active .prog-tab-label { color:#fff; }
+    .prog-day { display:none; }
+    .prog-day.active { display:block; }
+    .prog-block { margin-bottom:18px; }
+    .prog-block-header { display:flex;align-items:center;gap:9px;padding:9px 14px;border-radius:9px;margin-bottom:6px; }
+    .prog-block-header--morning { background:#e4f4f9; }
+    .prog-block-header--afternoon { background:#eeecff; }
+    .prog-block-title { font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#115B86; }
+    .prog-block-title--afternoon { color:#4f46e5; }
+    .prog-session { display:grid;grid-template-columns:130px 1fr auto;align-items:center;gap:14px;padding:13px 16px;background:var(--white);border:1px solid var(--border);border-radius:10px;margin-bottom:5px;transition:box-shadow .18s; }
+    .prog-session:hover { box-shadow:0 4px 18px rgba(17,91,134,.09); }
+    .prog-time { font-size:.74rem;font-weight:700;color:var(--secondary);font-variant-numeric:tabular-nums;line-height:1.4; }
+    .prog-content-title { font-size:.88rem;font-weight:700;color:var(--text);margin-bottom:2px; }
+    .prog-content-speaker { font-size:.77rem;color:var(--text-muted); }
+    .prog-type-badge { font-size:.64rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;padding:3px 9px;border-radius:20px;white-space:nowrap;flex-shrink:0; }
+    .prog-type-badge--inaugural { background:#e0f7fa;color:#115B86; }
+    .prog-type-badge--lecture { background:#e8edfe;color:#3c4db5; }
+    .prog-type-badge--live-ot { background:#fff0e0;color:#c05800; }
+    .prog-type-badge--break { background:#f1f5f9;color:#475569; }
+    .prog-session--live-ot { background:linear-gradient(135deg,#fffaf5,#fff4e8);border-color:#ffd5a8; }
+    .prog-session--break { background:#f8fafc;border-color:#e2e8f0; }
+    .prog-panel { background:linear-gradient(135deg,#f2f1ff,#eae9ff);border:1.5px solid #c4c0f8;border-radius:14px;padding:22px 24px;margin-top:16px; }
+    .prog-panel-header { display:flex;align-items:center;gap:12px;margin-bottom:18px; }
+    .prog-panel-icon { width:38px;height:38px;background:var(--primary);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
+    .prog-panel-label { font-size:.67rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#4f46e5;margin-bottom:4px; }
+    .prog-panel-topic { font-size:.95rem;font-weight:800;color:#1e1b4b; }
+    .prog-panel-body { display:grid;grid-template-columns:1fr 1fr;gap:14px; }
+    .prog-panel-moderator, .prog-panel-panelists { background:rgba(255,255,255,.75);border:1px solid #c4c0f8;border-radius:10px;padding:14px 16px; }
+    .prog-panel-block-label { font-size:.67rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#6366f1;margin-bottom:10px; }
+    .prog-panel-name { font-size:.85rem;font-weight:600;color:#1e1b4b;padding:6px 0;border-bottom:1px solid #ddd9fd; }
+    .prog-panel-name:last-child { border-bottom:none;padding-bottom:0; }
+    @media (max-width:640px) {
+      .prog-session { grid-template-columns:88px 1fr; }
+      .prog-type-badge { display:none; }
+      .prog-panel-body { grid-template-columns:1fr; }
+      .prog-tabs { flex-direction:column; }
+      .prog-tab { border-right:none;border-bottom:1.5px solid var(--border); }
+      .prog-tab:last-child { border-bottom:none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../../index.html" class="nav-logo">
+        <div class="">
+          <img class="nav-img" src="../../images/logo.png" alt="AGUSICON 2026" />
+        </div>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../committee.html">Committee</a></li>
+        <li class="has-dropdown">
+          <a href="../events.html" class="active">
+            Events
+            <svg class="dropdown-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="nav-dropdown">
+            <span class="dropdown-section-label">Upcoming</span>
+            <a href="agusicon-2026-bhadohi.html" class="dropdown-item">
+              <div class="di-year upcoming">2026</div>
+              <div><div class="di-title">AGUSICON 2026</div><div class="di-sub">Bhadohi &middot; 25-26 July 2026</div></div>
+            </a>
+          </div>
+        </li>
+        <li><a href="../gallery.html">Gallery</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="#registration" class="btn btn-Theme2026">Register Now</a>
+      </div>
+      <button class="nav-toggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<nav class="nav-mobile">
+  <button class="nav-mobile-close">&times;</button>
+  <a href="../../index.html">Home</a>
+  <a href="../about.html">About</a>
+  <a href="../committee.html">Committee</a>
+  <button class="nav-events-toggle" id="mobileEventsToggle">
+    Events
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+  <div class="nav-mobile-submenu" id="mobileEventsMenu">
+    <a href="../events.html">All Events</a>
+    <a href="agusicon-2026-bhadohi.html">AGUSICON 2026 – Bhadohi</a>
+  </div>
+  <a href="../gallery.html">Gallery</a>
+  <a href="../contact.html">Contact</a>
+  <a href="#registration" style="color:#30AEC3;margin-top:12px;font-size:1rem">Register Now →</a>
+</nav>
+
+<!-- EVENT HERO -->
+<section class="event-hero2026">
+  <div class="container">
+    <div class="event-hero-content">
+      <div class="breadcrumb" style="justify-content:flex-start;margin-bottom:20px">
+        <a href="../../index.html">Home</a><span>/</span>
+        <a href="../events.html">Events</a><span>/</span>
+        <span style="color:rgba(255,255,255,.9)">AGUSICON 2026</span>
+      </div>
+
+      <div class="event-tag">
+        <span class="pulse"></span>
+        Registration Open
+      </div>
+
+      <h1>AGUSICON 2026</h1>
+      <p style="font-size:1.05rem;color:rgba(255,255,255,.85);margin-bottom:20px;max-width:560px;line-height:1.7">
+        National Conference of the Association of Genitourinary Surgeons of India (AGUSI) &ndash; Organised by UP Chapter of ASI
+      </p>
+
+      <div class="event-info-pills">
+        <div class="info-pill">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          25-26 July 2026
+        </div>
+        <div class="info-pill">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Bhadohi, Uttar Pradesh
+        </div>
+        <div class="info-pill">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          2-Day Conference
+        </div>
+        <div class="info-pill">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+          CME Credits
+        </div>
+      </div>
+
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+        <a href="#registration" class="btn btn-Theme2026">Register Now</a>
+        <a href="#programme" class="btn btn-outline">View Programme</a>
+        <a href="#sponsorship" class="btn btn-outline">Stall Booking</a>
+      </div>
+
+      <div class="brochure-strip">
+        <a href="#" class="btn-brochure btn-coming" download>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Brochure
+        </a>
+        <a href="#" class="btn-brochure btn-coming" download>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Scientific Programme PDF
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COUNTDOWN -->
+<div style="background:rgba(17,91,134,.06);border-bottom:1px solid var(--border);padding:24px 0">
+  <div class="container">
+    <div style="display:flex;align-items:center;gap:32px;flex-wrap:wrap;justify-content:center">
+      <span style="font-size:.9rem;font-weight:600;color:var(--primary)">Conference Countdown:</span>
+      <div id="countdown" class="countdown">
+        <div class="countdown-box" style="background:var(--primary)">
+          <span class="num" id="cd-days" style="color:#fff">--</span>
+          <span class="lbl" style="color:rgba(255,255,255,.7)">Days</span>
+        </div>
+        <div class="countdown-box" style="background:var(--primary)">
+          <span class="num" id="cd-hours" style="color:#fff">--</span>
+          <span class="lbl" style="color:rgba(255,255,255,.7)">Hours</span>
+        </div>
+        <div class="countdown-box" style="background:var(--primary)">
+          <span class="num" id="cd-mins" style="color:#fff">--</span>
+          <span class="lbl" style="color:rgba(255,255,255,.7)">Mins</span>
+        </div>
+        <div class="countdown-box" style="background:var(--primary)">
+          <span class="num" id="cd-secs" style="color:#fff">--</span>
+          <span class="lbl" style="color:rgba(255,255,255,.7)">Secs</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<section style="background:var(--bg-light);padding:80px 0" id="about-event">
+  <div class="container">
+    <div class="event-detail-layout">
+
+      <!-- LEFT: Main Content -->
+      <div>
+
+        <!-- About Section -->
+        <div style="margin-bottom:52px">
+          <div class="section-badge">About the Conference</div>
+          <h2 class="section-title">AGUSICON 2026 – National Conference of AGUSI</h2>
+          <p style="color:var(--text-muted);line-height:1.8;margin-bottom:16px">
+            AGUSICON 2026 is the flagship national conference of the Association of Genitourinary Surgeons of India (AGUSI), organised under the UP Chapter of ASI. The conference brings together genitourinary surgeons, urologists, and specialists from across India for two days of intensive academic learning.
+          </p>
+          <p style="color:var(--text-muted);line-height:1.8;margin-bottom:16px">
+            The scientific programme covers advances in genitourinary surgery including endourology, reconstructive urology, uro-oncology, and related subspecialties. Expert faculty sessions, live surgical demonstrations, and case discussions are planned across both days.
+          </p>
+          <p style="color:var(--text-muted);line-height:1.8">
+            Delegates will earn CME credits recognised by the Medical Council of India. Registration is open – secure your spot early as seats are limited.
+          </p>
+        </div>
+
+        <!-- Organising Team -->
+        <div id="committee" style="margin-bottom:52px">
+          <div class="section-badge">Organising Team</div>
+          <h2 class="section-title">Organising Committee</h2>
+
+          <!-- Key roles: 4 feature cards -->
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px;margin-bottom:28px">
+            <div style="background:var(--white);border:1px solid var(--border);border-radius:14px;padding:18px 16px;text-align:center;box-shadow:var(--shadow-sm)">
+              <div style="width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--primary),#1a7a9c);display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-size:.9rem;font-weight:800;color:#fff">VPS</div>
+              <div style="font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--secondary);margin-bottom:5px">Patron</div>
+              <div style="font-size:.88rem;font-weight:700;color:var(--primary)">Dr. Vinod Prakash Singh</div>
+            </div>
+            <div style="background:var(--white);border:1px solid var(--border);border-radius:14px;padding:18px 16px;text-align:center;box-shadow:var(--shadow-sm)">
+              <div style="width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#6d5bd0,#8b7de0);display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-size:.9rem;font-weight:800;color:#fff">RKP</div>
+              <div style="font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--secondary);margin-bottom:5px">Organising Chairperson</div>
+              <div style="font-size:.88rem;font-weight:700;color:var(--primary)">Dr. R. K. Patel</div>
+            </div>
+            <div style="background:var(--white);border:1px solid var(--border);border-radius:14px;padding:18px 16px;text-align:center;box-shadow:var(--shadow-sm)">
+              <div style="width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#115B86,var(--secondary));display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-size:.9rem;font-weight:800;color:#fff">AKG</div>
+              <div style="font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--secondary);margin-bottom:5px">Organising Secretary</div>
+              <div style="font-size:.88rem;font-weight:700;color:var(--primary)">Dr. A. K. Gupta</div>
+            </div>
+            <div style="background:var(--white);border:1px solid var(--border);border-radius:14px;padding:18px 16px;text-align:center;box-shadow:var(--shadow-sm)">
+              <div style="width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#065f46,#059669);display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-size:.9rem;font-weight:800;color:#fff">AR</div>
+              <div style="font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--secondary);margin-bottom:5px">Treasurer</div>
+              <div style="font-size:.88rem;font-weight:700;color:var(--primary)">Dr. A. Rehman</div>
+            </div>
+          </div>
+
+          <!-- Sub-committees as labeled chip groups -->
+          <div style="background:var(--white);border:1px solid var(--border);border-radius:16px;padding:24px 28px;display:flex;flex-direction:column;gap:20px">
+
+            <!-- Co-Organising Chairmen -->
+            <div>
+              <div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--secondary);margin-bottom:8px">Co-Organising Chairmen</div>
+              <div style="display:flex;flex-wrap:wrap;gap:7px">
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:6px 13px;background:var(--bg-light);border:1px solid var(--border);border-radius:30px;font-size:.82rem;font-weight:600;color:var(--text)"><svg width="12" height="12" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. Ajay Dubey</span>
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:6px 13px;background:var(--bg-light);border:1px solid var(--border);border-radius:30px;font-size:.82rem;font-weight:600;color:var(--text)"><svg width="12" height="12" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. Sanjay Tiwari</span>
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:6px 13px;background:var(--bg-light);border:1px solid var(--border);border-radius:30px;font-size:.82rem;font-weight:600;color:var(--text)"><svg width="12" height="12" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. Vidhu Gupta</span>
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:6px 13px;background:var(--bg-light);border:1px solid var(--border);border-radius:30px;font-size:.82rem;font-weight:600;color:var(--text)"><svg width="12" height="12" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. Shalini Gupta</span>
+              </div>
+            </div>
+
+            <!-- Joint Organising Secretaries -->
+            <div>
+              <div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--secondary);margin-bottom:8px">Joint Organising Secretaries</div>
+              <div style="display:flex;flex-wrap:wrap;gap:7px">
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:6px 13px;background:var(--bg-light);border:1px solid var(--border);border-radius:30px;font-size:.82rem;font-weight:600;color:var(--text)"><svg width="12" height="12" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. Ganesh Yadav</span>
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:6px 13px;background:var(--bg-light);border:1px solid var(--border);border-radius:30px;font-size:.82rem;font-weight:600;color:var(--text)"><svg width="12" height="12" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. Anand Vinay Srivastava</span>
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:6px 13px;background:var(--bg-light);border:1px solid var(--border);border-radius:30px;font-size:.82rem;font-weight:600;color:var(--text)"><svg width="12" height="12" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. Srijan Agrawal</span>
+              </div>
+            </div>
+
+            <!-- Scientific Committee -->
+            <div>
+              <div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--secondary);margin-bottom:8px">Scientific Committee</div>
+              <div style="display:flex;flex-wrap:wrap;gap:7px">
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:6px 13px;background:var(--bg-light);border:1px solid var(--border);border-radius:30px;font-size:.82rem;font-weight:600;color:var(--text)"><svg width="12" height="12" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Prof. Dr. S. I. Siddique</span>
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:6px 13px;background:var(--bg-light);border:1px solid var(--border);border-radius:30px;font-size:.82rem;font-weight:600;color:var(--text)"><svg width="12" height="12" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. Alok Maurya</span>
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:6px 13px;background:var(--bg-light);border:1px solid var(--border);border-radius:30px;font-size:.82rem;font-weight:600;color:var(--text)"><svg width="12" height="12" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. Piyush Jaiswal</span>
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:6px 13px;background:var(--bg-light);border:1px solid var(--border);border-radius:30px;font-size:.82rem;font-weight:600;color:var(--text)"><svg width="12" height="12" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. Santosh Umar</span>
+              </div>
+            </div>
+
+            <!-- Registration Committee -->
+            <div>
+              <div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--secondary);margin-bottom:8px">Registration Committee</div>
+              <div style="display:flex;flex-wrap:wrap;gap:7px">
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:6px 13px;background:var(--bg-light);border:1px solid var(--border);border-radius:30px;font-size:.82rem;font-weight:600;color:var(--text)"><svg width="12" height="12" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. Chinmay Harsh</span>
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:6px 13px;background:var(--bg-light);border:1px solid var(--border);border-radius:30px;font-size:.82rem;font-weight:600;color:var(--text)"><svg width="12" height="12" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. Ajit Maurya</span>
+              </div>
+            </div>
+
+            <!-- Executive Members -->
+            <div>
+              <div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--secondary);margin-bottom:8px">Executive Members</div>
+              <div style="display:flex;flex-wrap:wrap;gap:7px">
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:6px 13px;background:var(--bg-light);border:1px solid var(--border);border-radius:30px;font-size:.82rem;font-weight:600;color:var(--text)"><svg width="12" height="12" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. Pradeep Singh</span>
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:6px 13px;background:var(--bg-light);border:1px solid var(--border);border-radius:30px;font-size:.82rem;font-weight:600;color:var(--text)"><svg width="12" height="12" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. Shushil Gupta</span>
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:6px 13px;background:var(--bg-light);border:1px solid var(--border);border-radius:30px;font-size:.82rem;font-weight:600;color:var(--text)"><svg width="12" height="12" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. Alok Gupta</span>
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:6px 13px;background:var(--bg-light);border:1px solid var(--border);border-radius:30px;font-size:.82rem;font-weight:600;color:var(--text)"><svg width="12" height="12" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. Pranav Yadav</span>
+              </div>
+            </div>
+
+            <!-- Additional Executive Members -->
+            <div>
+              <div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--secondary);margin-bottom:8px">Additional Executive Members</div>
+              <div style="display:flex;flex-wrap:wrap;gap:7px">
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:6px 13px;background:var(--bg-light);border:1px solid var(--border);border-radius:30px;font-size:.82rem;font-weight:600;color:var(--text)"><svg width="12" height="12" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. N. A. Khan</span>
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:6px 13px;background:var(--bg-light);border:1px solid var(--border);border-radius:30px;font-size:.82rem;font-weight:600;color:var(--text)"><svg width="12" height="12" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. K. P. Jaiswal</span>
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:6px 13px;background:var(--bg-light);border:1px solid var(--border);border-radius:30px;font-size:.82rem;font-weight:600;color:var(--text)"><svg width="12" height="12" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. Rajesh Mishra</span>
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:6px 13px;background:var(--bg-light);border:1px solid var(--border);border-radius:30px;font-size:.82rem;font-weight:600;color:var(--text)"><svg width="12" height="12" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. Jayant Mathur</span>
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:6px 13px;background:var(--bg-light);border:1px solid var(--border);border-radius:30px;font-size:.82rem;font-weight:600;color:var(--text)"><svg width="12" height="12" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. Mumtaz Ahmad</span>
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:6px 13px;background:var(--bg-light);border:1px solid var(--border);border-radius:30px;font-size:.82rem;font-weight:600;color:var(--text)"><svg width="12" height="12" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. H. Khan</span>
+              </div>
+            </div>
+
+            <!-- Reception & Hospitality -->
+            <div>
+              <div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--secondary);margin-bottom:8px">Reception &amp; Hospitality Committee</div>
+              <div style="display:flex;flex-wrap:wrap;gap:7px">
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:6px 13px;background:var(--bg-light);border:1px solid var(--border);border-radius:30px;font-size:.82rem;font-weight:600;color:var(--text)"><svg width="12" height="12" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. Kiran Gupta</span>
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:6px 13px;background:var(--bg-light);border:1px solid var(--border);border-radius:30px;font-size:.82rem;font-weight:600;color:var(--text)"><svg width="12" height="12" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. Premlata</span>
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:6px 13px;background:var(--bg-light);border:1px solid var(--border);border-radius:30px;font-size:.82rem;font-weight:600;color:var(--text)"><svg width="12" height="12" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. Sushila Yadav</span>
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:6px 13px;background:var(--bg-light);border:1px solid var(--border);border-radius:30px;font-size:.82rem;font-weight:600;color:var(--text)"><svg width="12" height="12" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. Suman Mishra</span>
+              </div>
+            </div>
+
+            <!-- Conference Convenors -->
+            <div>
+              <div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--secondary);margin-bottom:8px">Conference Convenors</div>
+              <div style="display:flex;flex-wrap:wrap;gap:7px">
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:6px 13px;background:var(--bg-light);border:1px solid var(--border);border-radius:30px;font-size:.82rem;font-weight:600;color:var(--text)"><svg width="12" height="12" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. Ashutosh Yadav</span>
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:6px 13px;background:var(--bg-light);border:1px solid var(--border);border-radius:30px;font-size:.82rem;font-weight:600;color:var(--text)"><svg width="12" height="12" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. Ajit Maurya</span>
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:6px 13px;background:var(--bg-light);border:1px solid var(--border);border-radius:30px;font-size:.82rem;font-weight:600;color:var(--text)"><svg width="12" height="12" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. Brijesh Prasad</span>
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:6px 13px;background:var(--bg-light);border:1px solid var(--border);border-radius:30px;font-size:.82rem;font-weight:600;color:var(--text)"><svg width="12" height="12" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. K. S. Mishra</span>
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:6px 13px;background:var(--bg-light);border:1px solid var(--border);border-radius:30px;font-size:.82rem;font-weight:600;color:var(--text)"><svg width="12" height="12" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. S. K. Baranwal</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div style="text-align:right;margin-top:14px">
+            <a href="../committee.html" style="font-size:.83rem;font-weight:600;color:var(--secondary);text-decoration:none;display:inline-flex;align-items:center;gap:5px">
+              View full committee &amp; national faculty
+              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Programme -->
+        <div id="programme" style="margin-bottom:52px">
+          <div class="section-badge">Scientific Programme</div>
+          <h2 class="section-title">2-Day Conference Programme</h2>
+
+          <!-- Day Switcher Tabs -->
+          <div class="prog-tabs">
+            <button class="prog-tab active" onclick="switchProgDay(1)">
+              <span class="prog-tab-date">Saturday, 25 July 2026</span>
+              <span class="prog-tab-label">Day 1 &mdash; CME &amp; Live OT</span>
+            </button>
+            <button class="prog-tab" onclick="switchProgDay(2)">
+              <span class="prog-tab-date">Sunday, 26 July 2026</span>
+              <span class="prog-tab-label">Day 2 &mdash; CME &amp; Live OT</span>
+            </button>
+          </div>
+
+          <!-- ── DAY 1 ── -->
+          <div id="prog-day-1" class="prog-day active">
+
+            <!-- Morning -->
+            <div class="prog-block">
+              <div class="prog-block-header prog-block-header--morning">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#115B86" stroke-width="2.5"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                <span class="prog-block-title">Morning Session</span>
+              </div>
+
+              <div class="prog-session">
+                <div class="prog-time">09:00 – 09:15 AM</div>
+                <div class="prog-content">
+                  <div class="prog-content-title">Introduction of CME &amp; Workshop</div>
+                  <div class="prog-content-speaker">Prof. Dr. Achal Gupta (MS)</div>
+                </div>
+                <span class="prog-type-badge prog-type-badge--inaugural">Inaugural</span>
+              </div>
+
+              <div class="prog-session">
+                <div class="prog-time">09:15 – 09:30 AM</div>
+                <div class="prog-content">
+                  <div class="prog-content-title">Sterilization and Disinfection</div>
+                  <div class="prog-content-speaker">Dr. Mayank Agarwal</div>
+                </div>
+                <span class="prog-type-badge prog-type-badge--lecture">Lecture</span>
+              </div>
+
+              <div class="prog-session prog-session--live-ot">
+                <div class="prog-time">09:30 AM – 02:00 PM</div>
+                <div class="prog-content">
+                  <div class="prog-content-title">Live OT Session</div>
+                  <div class="prog-content-speaker">Live surgical demonstrations by expert faculty</div>
+                </div>
+                <span class="prog-type-badge prog-type-badge--live-ot">Live OT</span>
+              </div>
+
+              <div class="prog-session prog-session--break">
+                <div class="prog-time">01:00 – 02:00 PM</div>
+                <div class="prog-content">
+                  <div class="prog-content-title">Lunch Break</div>
+                  <div class="prog-content-speaker">Hosted lunch for all delegates</div>
+                </div>
+                <span class="prog-type-badge prog-type-badge--break">Break</span>
+              </div>
+            </div>
+
+            <!-- Afternoon -->
+            <div class="prog-block">
+              <div class="prog-block-header prog-block-header--afternoon">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="2.5"><path d="M17 18a5 5 0 0 0-10 0"/><line x1="12" y1="2" x2="12" y2="9"/><line x1="4.22" y1="10.22" x2="5.64" y2="11.64"/><line x1="1" y1="18" x2="3" y2="18"/><line x1="21" y1="18" x2="23" y2="18"/><line x1="18.36" y1="11.64" x2="19.78" y2="10.22"/></svg>
+                <span class="prog-block-title prog-block-title--afternoon">Afternoon Sessions</span>
+              </div>
+
+              <div class="prog-session">
+                <div class="prog-time">02:00 – 02:20 PM</div>
+                <div class="prog-content">
+                  <div class="prog-content-title">Recent Advances in Management of CA Prostate</div>
+                  <div class="prog-content-speaker">Dr. Ashish Ohri &mdash; Ludhiana</div>
+                </div>
+                <span class="prog-type-badge prog-type-badge--lecture">Lecture</span>
+              </div>
+
+              <div class="prog-session">
+                <div class="prog-time">02:20 – 02:40 PM</div>
+                <div class="prog-content">
+                  <div class="prog-content-title">Vesicovaginal Fistula</div>
+                  <div class="prog-content-speaker">Dr. H. Krishna Moorthy &mdash; Kochi</div>
+                </div>
+                <span class="prog-type-badge prog-type-badge--lecture">Lecture</span>
+              </div>
+
+              <div class="prog-session">
+                <div class="prog-time">02:40 – 03:00 PM</div>
+                <div class="prog-content">
+                  <div class="prog-content-title">Management of Varicocele</div>
+                  <div class="prog-content-speaker">Dr. Sanjay Chaube &mdash; Jhansi</div>
+                </div>
+                <span class="prog-type-badge prog-type-badge--lecture">Lecture</span>
+              </div>
+
+              <div class="prog-session">
+                <div class="prog-time">03:00 – 03:20 PM</div>
+                <div class="prog-content">
+                  <div class="prog-content-title">PCNL &mdash; How to Do the Initial Puncture</div>
+                  <div class="prog-content-speaker">Dr. Manoj Yadav</div>
+                </div>
+                <span class="prog-type-badge prog-type-badge--lecture">Lecture</span>
+              </div>
+
+              <div class="prog-session">
+                <div class="prog-time">03:20 – 03:40 PM</div>
+                <div class="prog-content">
+                  <div class="prog-content-title">TURP &mdash; How I Do It?</div>
+                  <div class="prog-content-speaker">Dr. Hari Om Yadav &mdash; Ayodhya</div>
+                </div>
+                <span class="prog-type-badge prog-type-badge--lecture">Lecture</span>
+              </div>
+
+              <div class="prog-session">
+                <div class="prog-time">03:40 – 04:00 PM</div>
+                <div class="prog-content">
+                  <div class="prog-content-title">Management of Urethral Stricture</div>
+                  <div class="prog-content-speaker">Dr. Neeraj Srivastava &mdash; Gorakhpur</div>
+                </div>
+                <span class="prog-type-badge prog-type-badge--lecture">Lecture</span>
+              </div>
+
+              <div class="prog-session">
+                <div class="prog-time">04:00 – 04:20 PM</div>
+                <div class="prog-content">
+                  <div class="prog-content-title">Power of Human Touch</div>
+                  <div class="prog-content-speaker">Prof. Dr. Probal Neogi &mdash; Prayagraj</div>
+                </div>
+                <span class="prog-type-badge prog-type-badge--lecture">Lecture</span>
+              </div>
+            </div>
+
+            <!-- Panel Discussion Day 1 -->
+            <div class="prog-panel">
+              <div class="prog-panel-header">
+                <div class="prog-panel-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                </div>
+                <div>
+                  <div class="prog-panel-label">Panel Discussion</div>
+                  <div class="prog-panel-topic">Complications in Endourology</div>
+                </div>
+              </div>
+              <div class="prog-panel-body">
+                <div class="prog-panel-moderator">
+                  <div class="prog-panel-block-label">Moderator</div>
+                  <div class="prog-panel-name">Dr. Javed Iqbal</div>
+                </div>
+                <div class="prog-panel-panelists">
+                  <div class="prog-panel-block-label">Panelists</div>
+                  <div class="prog-panel-name">Dr. H. Krishna Moorthy</div>
+                  <div class="prog-panel-name">Dr. Mayank Agarwal</div>
+                  <div class="prog-panel-name">Dr. Manoj Yadav</div>
+                  <div class="prog-panel-name">Dr. Ashish Ohri</div>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- /prog-day-1 -->
+
+          <!-- ── DAY 2 ── -->
+          <div id="prog-day-2" class="prog-day">
+
+            <!-- Morning -->
+            <div class="prog-block">
+              <div class="prog-block-header prog-block-header--morning">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#115B86" stroke-width="2.5"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                <span class="prog-block-title">Morning Session</span>
+              </div>
+
+              <div class="prog-session">
+                <div class="prog-time">09:00 – 09:15 AM</div>
+                <div class="prog-content">
+                  <div class="prog-content-title">Introduction of CME &amp; Workshop</div>
+                  <div class="prog-content-speaker">Prof. Dr. Achal Gupta (MS)</div>
+                </div>
+                <span class="prog-type-badge prog-type-badge--inaugural">Inaugural</span>
+              </div>
+
+              <div class="prog-session">
+                <div class="prog-time">09:15 – 09:30 AM</div>
+                <div class="prog-content">
+                  <div class="prog-content-title">Stents in Urology</div>
+                  <div class="prog-content-speaker">Dr. Kartar Singh</div>
+                </div>
+                <span class="prog-type-badge prog-type-badge--lecture">Lecture</span>
+              </div>
+
+              <div class="prog-session prog-session--live-ot">
+                <div class="prog-time">09:30 AM – 01:00 PM</div>
+                <div class="prog-content">
+                  <div class="prog-content-title">Live OT Session</div>
+                  <div class="prog-content-speaker">Live surgical demonstrations by expert faculty</div>
+                </div>
+                <span class="prog-type-badge prog-type-badge--live-ot">Live OT</span>
+              </div>
+
+              <div class="prog-session prog-session--break">
+                <div class="prog-time">01:00 – 02:00 PM</div>
+                <div class="prog-content">
+                  <div class="prog-content-title">Lunch Break</div>
+                  <div class="prog-content-speaker">Hosted lunch for all delegates</div>
+                </div>
+                <span class="prog-type-badge prog-type-badge--break">Break</span>
+              </div>
+            </div>
+
+            <!-- Afternoon -->
+            <div class="prog-block">
+              <div class="prog-block-header prog-block-header--afternoon">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="2.5"><path d="M17 18a5 5 0 0 0-10 0"/><line x1="12" y1="2" x2="12" y2="9"/><line x1="4.22" y1="10.22" x2="5.64" y2="11.64"/><line x1="1" y1="18" x2="3" y2="18"/><line x1="21" y1="18" x2="23" y2="18"/><line x1="18.36" y1="11.64" x2="19.78" y2="10.22"/></svg>
+                <span class="prog-block-title prog-block-title--afternoon">Afternoon Sessions</span>
+              </div>
+
+              <div class="prog-session">
+                <div class="prog-time">02:00 – 02:20 PM</div>
+                <div class="prog-content">
+                  <div class="prog-content-title">Chyluria</div>
+                  <div class="prog-content-speaker">Dr. Kamad Dixit &mdash; Jhansi</div>
+                </div>
+                <span class="prog-type-badge prog-type-badge--lecture">Lecture</span>
+              </div>
+
+              <div class="prog-session">
+                <div class="prog-time">02:20 – 02:40 PM</div>
+                <div class="prog-content">
+                  <div class="prog-content-title">Genitourinary Tuberculosis</div>
+                  <div class="prog-content-speaker">Dr. Naseem Ahmad Khan &mdash; Siddharth Nagar</div>
+                </div>
+                <span class="prog-type-badge prog-type-badge--lecture">Lecture</span>
+              </div>
+
+              <div class="prog-session">
+                <div class="prog-time">02:40 – 03:00 PM</div>
+                <div class="prog-content">
+                  <div class="prog-content-title">RIRS (Retrograde Intrarenal Surgery)</div>
+                  <div class="prog-content-speaker">Dr. Swetank Prakash &mdash; Agra</div>
+                </div>
+                <span class="prog-type-badge prog-type-badge--lecture">Lecture</span>
+              </div>
+
+              <div class="prog-session">
+                <div class="prog-time">03:00 – 03:20 PM</div>
+                <div class="prog-content">
+                  <div class="prog-content-title">Lasers in Urology</div>
+                  <div class="prog-content-speaker">Dr. Sudeesh &mdash; Patna</div>
+                </div>
+                <span class="prog-type-badge prog-type-badge--lecture">Lecture</span>
+              </div>
+
+              <div class="prog-session">
+                <div class="prog-time">03:20 – 03:40 PM</div>
+                <div class="prog-content">
+                  <div class="prog-content-title">Robotics in Urology</div>
+                  <div class="prog-content-speaker">Dr. Javed Iqbal &mdash; Varanasi</div>
+                </div>
+                <span class="prog-type-badge prog-type-badge--lecture">Lecture</span>
+              </div>
+
+              <div class="prog-session">
+                <div class="prog-time">03:40 – 04:00 PM</div>
+                <div class="prog-content">
+                  <div class="prog-content-title">Acute Scrotum in Children</div>
+                  <div class="prog-content-speaker">Dr. Achal Gupta</div>
+                </div>
+                <span class="prog-type-badge prog-type-badge--lecture">Lecture</span>
+              </div>
+            </div>
+
+            <!-- Panel Discussion Day 2 -->
+            <div class="prog-panel">
+              <div class="prog-panel-header">
+                <div class="prog-panel-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                </div>
+                <div>
+                  <div class="prog-panel-label">Panel Discussion</div>
+                  <div class="prog-panel-topic">What Every Surgeon Should Know About Urology</div>
+                </div>
+              </div>
+              <div class="prog-panel-body">
+                <div class="prog-panel-moderator">
+                  <div class="prog-panel-block-label">Moderator</div>
+                  <div class="prog-panel-name">Dr. Probal Neogi</div>
+                </div>
+                <div class="prog-panel-panelists">
+                  <div class="prog-panel-block-label">Panelists</div>
+                  <div class="prog-panel-name">Dr. Achal Gupta</div>
+                  <div class="prog-panel-name">Dr. Kedar Nath Sahi</div>
+                  <div class="prog-panel-name">Dr. S. K. Bharti</div>
+                  <div class="prog-panel-name">Dr. P. S. Chaudhary</div>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- /prog-day-2 -->
+
+        </div>
+
+        <!-- Faculty -->
+        <div id="faculty" style="margin-bottom:52px">
+          <div class="section-badge">Faculty</div>
+          <h2 class="section-title">Expert Faculty</h2>
+
+          <div style="background:var(--white);border:1px solid var(--border);border-radius:16px;padding:28px 32px">
+            <p style="font-size:.875rem;color:var(--text-muted);margin-bottom:20px;line-height:1.7">
+              AGUSICON 2026 features distinguished national faculty from leading genitourinary and urological surgery departments across India.
+            </p>
+            <ul style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:8px;list-style:none;padding:0;margin:0">
+              <li style="display:flex;align-items:center;gap:9px;padding:10px 13px;background:var(--bg-light);border-radius:9px;font-size:.84rem;font-weight:600;color:var(--text)"><svg width="13" height="13" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Prof. Dr. Probal Neogi</li>
+              <li style="display:flex;align-items:center;gap:9px;padding:10px 13px;background:var(--bg-light);border-radius:9px;font-size:.84rem;font-weight:600;color:var(--text)"><svg width="13" height="13" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. Achal Gupta</li>
+              <li style="display:flex;align-items:center;gap:9px;padding:10px 13px;background:var(--bg-light);border-radius:9px;font-size:.84rem;font-weight:600;color:var(--text)"><svg width="13" height="13" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. Kartar Singh Yadav</li>
+              <li style="display:flex;align-items:center;gap:9px;padding:10px 13px;background:var(--bg-light);border-radius:9px;font-size:.84rem;font-weight:600;color:var(--text)"><svg width="13" height="13" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Prof. Dr. Puneet Gupta</li>
+              <li style="display:flex;align-items:center;gap:9px;padding:10px 13px;background:var(--bg-light);border-radius:9px;font-size:.84rem;font-weight:600;color:var(--text)"><svg width="13" height="13" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Prof. Dr. S. K. Bhartiya</li>
+              <li style="display:flex;align-items:center;gap:9px;padding:10px 13px;background:var(--bg-light);border-radius:9px;font-size:.84rem;font-weight:600;color:var(--text)"><svg width="13" height="13" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Prof. Dr. Mumtaz Ansari</li>
+              <li style="display:flex;align-items:center;gap:9px;padding:10px 13px;background:var(--bg-light);border-radius:9px;font-size:.84rem;font-weight:600;color:var(--text)"><svg width="13" height="13" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Prof. Dr. Vaibhav Srivastava</li>
+              <li style="display:flex;align-items:center;gap:9px;padding:10px 13px;background:var(--bg-light);border-radius:9px;font-size:.84rem;font-weight:600;color:var(--text)"><svg width="13" height="13" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Prof. Dr. Shabi Ahmad</li>
+              <li style="display:flex;align-items:center;gap:9px;padding:10px 13px;background:var(--bg-light);border-radius:9px;font-size:.84rem;font-weight:600;color:var(--text)"><svg width="13" height="13" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Prof. Dr. Mohit Jain</li>
+              <li style="display:flex;align-items:center;gap:9px;padding:10px 13px;background:var(--bg-light);border-radius:9px;font-size:.84rem;font-weight:600;color:var(--text)"><svg width="13" height="13" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. D. M. Pramanik</li>
+              <li style="display:flex;align-items:center;gap:9px;padding:10px 13px;background:var(--bg-light);border-radius:9px;font-size:.84rem;font-weight:600;color:var(--text)"><svg width="13" height="13" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. Javed Iqbal</li>
+              <li style="display:flex;align-items:center;gap:9px;padding:10px 13px;background:var(--bg-light);border-radius:9px;font-size:.84rem;font-weight:600;color:var(--text)"><svg width="13" height="13" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. Kamal Singh</li>
+              <li style="display:flex;align-items:center;gap:9px;padding:10px 13px;background:var(--bg-light);border-radius:9px;font-size:.84rem;font-weight:600;color:var(--text)"><svg width="13" height="13" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. Rajneesh Srivastava</li>
+              <li style="display:flex;align-items:center;gap:9px;padding:10px 13px;background:var(--bg-light);border-radius:9px;font-size:.84rem;font-weight:600;color:var(--text)"><svg width="13" height="13" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. Sanjay Chaubey</li>
+              <li style="display:flex;align-items:center;gap:9px;padding:10px 13px;background:var(--bg-light);border-radius:9px;font-size:.84rem;font-weight:600;color:var(--text)"><svg width="13" height="13" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. Anand Rai Bansal</li>
+              <li style="display:flex;align-items:center;gap:9px;padding:10px 13px;background:var(--bg-light);border-radius:9px;font-size:.84rem;font-weight:600;color:var(--text)"><svg width="13" height="13" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. Sudish Kumar</li>
+              <li style="display:flex;align-items:center;gap:9px;padding:10px 13px;background:var(--bg-light);border-radius:9px;font-size:.84rem;font-weight:600;color:var(--text)"><svg width="13" height="13" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. Ashish Bohra</li>
+              <li style="display:flex;align-items:center;gap:9px;padding:10px 13px;background:var(--bg-light);border-radius:9px;font-size:.84rem;font-weight:600;color:var(--text)"><svg width="13" height="13" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. Sanjay Goel</li>
+              <li style="display:flex;align-items:center;gap:9px;padding:10px 13px;background:var(--bg-light);border-radius:9px;font-size:.84rem;font-weight:600;color:var(--text)"><svg width="13" height="13" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. G. Chandra Shekhar</li>
+              <li style="display:flex;align-items:center;gap:9px;padding:10px 13px;background:var(--bg-light);border-radius:9px;font-size:.84rem;font-weight:600;color:var(--text)"><svg width="13" height="13" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. Hari Om Yadav</li>
+              <li style="display:flex;align-items:center;gap:9px;padding:10px 13px;background:var(--bg-light);border-radius:9px;font-size:.84rem;font-weight:600;color:var(--text)"><svg width="13" height="13" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. Niraj Srivastava</li>
+              <li style="display:flex;align-items:center;gap:9px;padding:10px 13px;background:var(--bg-light);border-radius:9px;font-size:.84rem;font-weight:600;color:var(--text)"><svg width="13" height="13" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. Devinder Kumar Verma</li>
+              <li style="display:flex;align-items:center;gap:9px;padding:10px 13px;background:var(--bg-light);border-radius:9px;font-size:.84rem;font-weight:600;color:var(--text)"><svg width="13" height="13" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. Nivesh Aggarwal</li>
+              <li style="display:flex;align-items:center;gap:9px;padding:10px 13px;background:var(--bg-light);border-radius:9px;font-size:.84rem;font-weight:600;color:var(--text)"><svg width="13" height="13" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. Amit Agarwal</li>
+              <li style="display:flex;align-items:center;gap:9px;padding:10px 13px;background:var(--bg-light);border-radius:9px;font-size:.84rem;font-weight:600;color:var(--text)"><svg width="13" height="13" fill="none" stroke="var(--secondary)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Dr. Sanjay Gupta</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Hands-on Training -->
+        <div id="hands-on-training" style="margin-bottom:52px">
+          <div class="section-badge">New Addition</div>
+          <h2 class="section-title">Hands-on Training Modules</h2>
+
+          <div style="background:linear-gradient(135deg,#0d2e48,#115B86,#1a7ca8);border-radius:20px;padding:32px;position:relative;overflow:hidden">
+            <!-- decorative glow -->
+            <div style="position:absolute;top:-40px;right:-40px;width:220px;height:220px;background:radial-gradient(circle,rgba(48,174,195,.3),transparent 70%);pointer-events:none"></div>
+
+            <div style="position:relative">
+              <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:5px 13px;border-radius:20px;margin-bottom:18px">
+                <span style="width:7px;height:7px;border-radius:50%;background:#4ade80;flex-shrink:0"></span>
+                New Addition &mdash; Limited Seats
+              </div>
+              <h3 style="font-size:1.4rem;font-weight:800;color:#fff;margin-bottom:8px">Hands-on Surgical Training</h3>
+              <p style="font-size:.88rem;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px">Gain practical, hands-on experience under direct expert guidance. Two focused modules — only 20 seats each, on a first-come first-served basis.</p>
+
+              <!-- Module cards -->
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:22px">
+                <!-- Module 1 -->
+                <div style="background:rgba(255,255,255,.1);backdrop-filter:blur(4px);border:1.5px solid rgba(255,255,255,.2);border-radius:14px;padding:20px 18px">
+                  <div style="font-size:.65rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:8px">Module 1</div>
+                  <div style="font-size:.92rem;font-weight:800;color:#fff;line-height:1.4;margin-bottom:14px">Initial Puncture for PCNL with C-Arm Control</div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
+                    <div style="font-size:1.3rem;font-weight:800;color:#fde68a">&#8377;4,000</div>
+                    <div style="font-size:.72rem;font-weight:700;background:rgba(252,211,77,.15);border:1px solid rgba(252,211,77,.3);color:#fde68a;padding:3px 10px;border-radius:20px">Enrollment Fee</div>
+                  </div>
+                </div>
+                <!-- Module 2 -->
+                <div style="background:rgba(255,255,255,.1);backdrop-filter:blur(4px);border:1.5px solid rgba(255,255,255,.2);border-radius:14px;padding:20px 18px">
+                  <div style="font-size:.65rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:8px">Module 2</div>
+                  <div style="font-size:.92rem;font-weight:800;color:#fff;line-height:1.4;margin-bottom:14px">TURP (Transurethral Resection of Prostate)</div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
+                    <div style="font-size:1.3rem;font-weight:800;color:#fde68a">&#8377;3,000</div>
+                    <div style="font-size:.72rem;font-weight:700;background:rgba(252,211,77,.15);border:1px solid rgba(252,211,77,.3);color:#fde68a;padding:3px 10px;border-radius:20px">Enrollment Fee</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Note + CTA -->
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px">
+                <div style="display:flex;align-items:center;gap:8px;font-size:.82rem;color:rgba(255,255,255,.75);font-weight:600">
+                  <svg width="15" height="15" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="2.5" viewBox="0 0 24 24" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                  Limited to 20 seats per module &mdash; First come, first served
+                </div>
+                <a href="hands-on-training-2026.html" style="display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--primary);padding:12px 24px;border-radius:10px;font-weight:800;font-size:.88rem;text-decoration:none;box-shadow:0 4px 20px rgba(0,0,0,.2);transition:transform .15s,box-shadow .15s" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 28px rgba(0,0,0,.25)'" onmouseout="this.style.transform='';this.style.boxShadow='0 4px 20px rgba(0,0,0,.2)'">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                  Enroll for Training
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stall Booking / Sponsorship -->
+        <div id="sponsorship" style="margin-bottom:52px">
+          <div class="section-badge">Stall Booking &amp; Sponsorship</div>
+          <h2 class="section-title">Exhibition Stalls &amp; Sponsorship</h2>
+          <p style="color:var(--text-muted);margin-bottom:28px;line-height:1.7">
+            Pharmaceutical companies, medical device manufacturers, and healthcare brands are invited to participate as exhibitors and sponsors at AGUSICON 2026. Limited stall space is available.
+          </p>
+
+          <!-- Premium Stall -->
+          <div style="background:linear-gradient(135deg,var(--primary),#1a7a9c);border-radius:16px;padding:28px 32px;margin-bottom:20px;color:#fff">
+            <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px">
+              <div>
+                <div style="font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:6px">Featured</div>
+                <h3 style="font-size:1.3rem;font-weight:800;color:#fff;margin-bottom:4px">Premium Stall</h3>
+                <p style="color:rgba(255,255,255,.8);font-size:.9rem">Prime location, maximum visibility, premium branding across all conference touchpoints.</p>
+              </div>
+              <div style="text-align:right">
+                <div style="font-size:2rem;font-weight:800;color:#fff">&#8377;2,50,000</div>
+                <div style="font-size:.75rem;color:rgba(255,255,255,.65)">Per stall</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stall Grid -->
+          <div class="core-sp-grid" style="margin-bottom:24px">
+            <div class="sp-card core-custom" data-sponsor="stall-1-4">
+              <div class="sp-tier-label">Standard Stall</div>
+              <div class="sp-title">Stalls 1-4</div>
+              <div class="sp-price">&#8377;1,00,000</div>
+              <div class="sp-gst">Per stall</div>
+              <div class="sp-facts">
+                <div class="sp-fact"><span class="sp-fact-label">Slots</span><span class="sp-fact-value">4 Available</span></div>
+              </div>
+              <ul class="sp-benefits">
+                <li>Prime position stall space</li>
+                <li>Branding on conference materials</li>
+              </ul>
+              <button class="sp-details-btn">Enquire</button>
+            </div>
+            <div class="sp-card core-custom" data-sponsor="stall-5-10">
+              <div class="sp-tier-label">Standard Stall</div>
+              <div class="sp-title">Stalls 5-10</div>
+              <div class="sp-price">&#8377;80,000</div>
+              <div class="sp-gst">Per stall</div>
+              <div class="sp-facts">
+                <div class="sp-fact"><span class="sp-fact-label">Slots</span><span class="sp-fact-value">6 Available</span></div>
+              </div>
+              <ul class="sp-benefits">
+                <li>Good visibility stall space</li>
+                <li>Company name in programme</li>
+              </ul>
+              <button class="sp-details-btn">Enquire</button>
+            </div>
+            <div class="sp-card core-custom" data-sponsor="stall-11-15">
+              <div class="sp-tier-label">Standard Stall</div>
+              <div class="sp-title">Stalls 11-15</div>
+              <div class="sp-price">&#8377;60,000</div>
+              <div class="sp-gst">Per stall</div>
+              <div class="sp-facts">
+                <div class="sp-fact"><span class="sp-fact-label">Slots</span><span class="sp-fact-value">5 Available</span></div>
+              </div>
+              <ul class="sp-benefits">
+                <li>Standard exhibition space</li>
+                <li>Company name in programme</li>
+              </ul>
+              <button class="sp-details-btn">Enquire</button>
+            </div>
+            <div class="sp-card core-custom" data-sponsor="stall-16-20">
+              <div class="sp-tier-label">Standard Stall</div>
+              <div class="sp-title">Stalls 16-20</div>
+              <div class="sp-price">&#8377;50,000</div>
+              <div class="sp-gst">Per stall</div>
+              <div class="sp-facts">
+                <div class="sp-fact"><span class="sp-fact-label">Slots</span><span class="sp-fact-value">5 Available</span></div>
+              </div>
+              <ul class="sp-benefits">
+                <li>Standard exhibition space</li>
+                <li>Company name in programme</li>
+              </ul>
+              <button class="sp-details-btn">Enquire</button>
+            </div>
+          </div>
+
+          <!-- Stall Enquiry Form -->
+          <div style="background:var(--white);border:1px solid var(--border);border-radius:16px;padding:32px;margin-top:32px" id="stall-enquiry">
+            <h3 style="font-size:1.1rem;font-weight:700;color:var(--primary);margin-bottom:6px">Book a Stall / Sponsorship Enquiry</h3>
+            <p style="font-size:.875rem;color:var(--text-muted);margin-bottom:24px">Fill in the form below and our team will contact you with stall allocation details and invoice.</p>
+            <form id="stallEnquiryForm" action="../../data/stall-enquiry-handler.php" method="POST">
+              <input type="hidden" name="event_name" value="AGUSICON 2026 - Bhadohi" />
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Company / Organisation Name *</label>
+                  <input type="text" name="company_name" placeholder="Your company name" required />
+                </div>
+                <div class="form-group">
+                  <label>Contact Person Name *</label>
+                  <input type="text" name="contact_name" placeholder="Full name" required />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Mobile Number *</label>
+                  <input type="tel" name="mobile" placeholder="+91 98765 43210" required />
+                </div>
+                <div class="form-group">
+                  <label>Email Address *</label>
+                  <input type="email" name="email" placeholder="contact@company.com" required />
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Stall / Sponsorship Interest *</label>
+                <select name="stall_interest" required>
+                  <option value="">Select interest</option>
+                  <option value="premium">Premium Stall – ₹2,50,000</option>
+                  <option value="stall_1_4">Stalls 1-4 – ₹1,00,000 each</option>
+                  <option value="stall_5_10">Stalls 5-10 – ₹80,000 each</option>
+                  <option value="stall_11_15">Stalls 11-15 – ₹60,000 each</option>
+                  <option value="stall_16_20">Stalls 16-20 – ₹50,000 each</option>
+                  <option value="general">General Sponsorship Enquiry</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Additional Message</label>
+                <textarea name="message" placeholder="Any specific requirements or questions..." rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit Enquiry</button>
+              <div id="stallEnquirySuccess" class="success-msg" style="display:none;margin-top:14px">Your enquiry has been submitted. Our team will contact you shortly.</div>
+              <div id="stallEnquiryError" class="error-msg" style="display:none;margin-top:14px">Could not submit enquiry. Please call +91 7838768692 directly.</div>
+            </form>
+          </div>
+
+          <!-- Secretariat Contact -->
+          <div style="margin-top:24px;background:linear-gradient(135deg,rgba(17,91,134,.06),rgba(48,174,195,.08));border:1.5px solid var(--secondary);border-radius:16px;padding:24px 28px">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
+              <div style="width:44px;height:44px;border-radius:50%;background:var(--primary);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                <svg width="20" height="20" fill="none" stroke="#fff" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </div>
+              <div>
+                <div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--secondary)">Conference Secretariat</div>
+                <div style="font-size:1rem;font-weight:800;color:var(--primary)">Dr. A. K. Gupta (MS)</div>
+                <div style="font-size:.78rem;color:var(--text-muted)">Organising Secretary, AGUSICON 2026</div>
+              </div>
+            </div>
+
+            <div style="display:flex;align-items:flex-start;gap:8px;font-size:.83rem;color:var(--text-muted);margin-bottom:16px;padding:10px 12px;background:var(--white);border-radius:9px;border:1px solid var(--border)">
+              <svg width="14" height="14" fill="none" stroke="var(--secondary)" stroke-width="2" viewBox="0 0 24 24" style="flex-shrink:0;margin-top:1px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Blessing Garden, Bypass Road, Ramraipur, Bhadohi – 221401, Uttar Pradesh
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px">
+              <a href="tel:+919936042720" style="display:flex;align-items:center;justify-content:center;gap:7px;background:var(--primary);color:#fff;padding:10px 14px;border-radius:9px;font-size:.82rem;font-weight:700;text-decoration:none">
+                <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.16a16 16 0 006.93 6.93l1.52-1.52a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                +91 9936042720
+              </a>
+              <a href="tel:+917838768692" style="display:flex;align-items:center;justify-content:center;gap:7px;background:var(--white);border:1.5px solid var(--border);color:var(--primary);padding:10px 14px;border-radius:9px;font-size:.82rem;font-weight:700;text-decoration:none">
+                <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.16a16 16 0 006.93 6.93l1.52-1.52a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                +91 7838768692
+              </a>
+            </div>
+            <a href="mailto:agusicon2025@gmail.com" style="display:flex;align-items:center;justify-content:center;gap:7px;background:var(--white);border:1.5px solid var(--border);color:var(--text);padding:10px 14px;border-radius:9px;font-size:.82rem;font-weight:700;text-decoration:none">
+              <svg width="13" height="13" fill="none" stroke="var(--secondary)" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              agusicon2025@gmail.com
+            </a>
+          </div>
+        </div>
+
+        <!-- Venue -->
+        <div id="venue" style="margin-bottom:52px">
+          <div class="section-badge">Venue</div>
+          <h2 class="section-title">Conference Venue</h2>
+          <div style="background:var(--white);border-radius:16px;overflow:hidden;border:1px solid var(--border);margin-bottom:24px">
+            <div style="padding:28px 32px 32px">
+              <h3 style="font-size:1.2rem;font-weight:700;color:var(--primary);margin-bottom:8px">Blessing Garden</h3>
+              <p style="color:var(--text-muted);font-size:.9rem;line-height:1.7;margin-bottom:16px">
+                Bypass Road, Ramraipur, Bhadohi – 221401, Uttar Pradesh
+              </p>
+              <div style="display:flex;gap:20px;flex-wrap:wrap">
+                <span style="display:flex;align-items:center;gap:6px;font-size:.85rem;color:var(--text-muted)">
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Bhadohi, Uttar Pradesh
+                </span>
+                <span style="display:flex;align-items:center;gap:6px;font-size:.85rem;color:var(--text-muted)">
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  Pin: 221401
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="venue-map">
+            <div class="mapouter">
+              <div class="gmap_canvas">
+                <iframe
+                  src="https://maps.google.com/maps?q=Blessing+Garden+Bhadohi+UP&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                  frameborder="0" scrolling="no">
+                </iframe>
+                <style>
+                  .venue-map { margin-top:24px;border-radius:16px;overflow:hidden;border:1px solid var(--border); }
+                  .mapouter { width:100%;height:300px;display:table; }
+                  .gmap_canvas { overflow:hidden;position:relative;width:100%;height:100%;background:#fff; }
+                  .gmap_canvas iframe { width:100%!important;height:100%!important;border:none;position:relative!important;z-index:2!important; }
+                  .gmap_canvas a { color:#fff!important;position:absolute!important;top:0!important;left:0!important;z-index:0!important; }
+                </style>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Travel Information -->
+        <div id="travel" style="margin-bottom:52px">
+          <div class="section-badge">How to Reach</div>
+          <h2 class="section-title">Travel Information</h2>
+          <p style="color:var(--text-muted);margin-bottom:24px;line-height:1.7;font-size:.9rem">Bhadohi is well connected by air and rail. The venue is conveniently accessible from Varanasi and Prayagraj.</p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px">
+
+            <!-- Varanasi Airport -->
+            <div style="background:var(--white);border:1px solid var(--border);border-radius:14px;padding:20px 22px">
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+                <div style="width:40px;height:40px;border-radius:10px;background:rgba(17,91,134,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                  <svg width="20" height="20" fill="none" stroke="var(--primary)" stroke-width="1.8" viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 00-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
+                </div>
+                <div>
+                  <div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--secondary)">Nearest Airport</div>
+                  <div style="font-size:1rem;font-weight:700;color:var(--primary)">Varanasi Airport</div>
+                </div>
+              </div>
+              <p style="font-size:.84rem;color:var(--text-muted);line-height:1.6;margin-bottom:14px">Lal Bahadur Shastri International Airport (VNS) — well connected to major Indian cities.</p>
+              <a href="https://maps.google.com/?q=Varanasi+Airport" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:600;color:var(--secondary)">
+                <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                View on Maps
+              </a>
+            </div>
+
+            <!-- Prayagraj Airport -->
+            <div style="background:var(--white);border:1px solid var(--border);border-radius:14px;padding:20px 22px">
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+                <div style="width:40px;height:40px;border-radius:10px;background:rgba(17,91,134,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                  <svg width="20" height="20" fill="none" stroke="var(--primary)" stroke-width="1.8" viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 00-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
+                </div>
+                <div>
+                  <div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--secondary)">Alternate Airport</div>
+                  <div style="font-size:1rem;font-weight:700;color:var(--primary)">Prayagraj Airport</div>
+                </div>
+              </div>
+              <p style="font-size:.84rem;color:var(--text-muted);line-height:1.6;margin-bottom:14px">Bamrauli Airport (IXD), Prayagraj — an alternate option for delegates from central/western India.</p>
+              <a href="https://maps.google.com/?q=Prayagraj+Airport" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:600;color:var(--secondary)">
+                <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                View on Maps
+              </a>
+            </div>
+
+            <!-- Bhadohi Railway -->
+            <div style="background:var(--white);border:1px solid var(--border);border-radius:14px;padding:20px 22px">
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+                <div style="width:40px;height:40px;border-radius:10px;background:rgba(17,91,134,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                  <svg width="20" height="20" fill="none" stroke="var(--primary)" stroke-width="1.8" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="16" rx="2"/><path d="M4 11h16"/><path d="M12 3v8"/><path d="M8 19l-2 3"/><path d="M16 19l2 3"/></svg>
+                </div>
+                <div>
+                  <div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--secondary)">Nearest Railway Station</div>
+                  <div style="font-size:1rem;font-weight:700;color:var(--primary)">Bhadohi Railway Station</div>
+                </div>
+              </div>
+              <p style="font-size:.84rem;color:var(--text-muted);line-height:1.6;margin-bottom:14px">Bhadohi (BHI) — closest station to the venue. Auto/taxi available outside.</p>
+              <a href="https://maps.google.com/?q=Bhadohi+Railway+Station" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:600;color:var(--secondary)">
+                <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                View on Maps
+              </a>
+            </div>
+
+            <!-- Varanasi Junction -->
+            <div style="background:var(--white);border:1px solid var(--border);border-radius:14px;padding:20px 22px">
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+                <div style="width:40px;height:40px;border-radius:10px;background:rgba(17,91,134,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                  <svg width="20" height="20" fill="none" stroke="var(--primary)" stroke-width="1.8" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="16" rx="2"/><path d="M4 11h16"/><path d="M12 3v8"/><path d="M8 19l-2 3"/><path d="M16 19l2 3"/></svg>
+                </div>
+                <div>
+                  <div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--secondary)">Alternate Railway Station</div>
+                  <div style="font-size:1rem;font-weight:700;color:var(--primary)">Varanasi Junction</div>
+                </div>
+              </div>
+              <p style="font-size:.84rem;color:var(--text-muted);line-height:1.6;margin-bottom:14px">Varanasi Junction (BSB) — major railhead for delegates arriving from across India.</p>
+              <a href="https://maps.google.com/?q=Varanasi+Junction+Railway+Station" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:600;color:var(--secondary)">
+                <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                View on Maps
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Travel Assistance -->
+        <div id="travel-assistance" style="margin-bottom:52px">
+          <div class="section-badge">Travel &amp; Stay</div>
+          <h2 class="section-title">Travel &amp; Accommodation Assistance</h2>
+          <p style="color:var(--text-muted);margin-bottom:24px;line-height:1.7;font-size:.9rem">
+            Need help booking flights, trains, hotels, or local transportation? Our official travel assistance partner can help delegates plan their visit to AGUSICON 2026.
+          </p>
+          <div style="background:linear-gradient(135deg,rgba(17,91,134,.05),rgba(48,174,195,.07));border:1.5px solid var(--secondary);border-radius:16px;padding:28px 32px">
+            <div style="display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap">
+              <div style="width:48px;height:48px;border-radius:12px;background:var(--secondary);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                <svg width="24" height="24" fill="none" stroke="#fff" stroke-width="1.8" viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 00-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
+              </div>
+              <div style="flex:1;min-width:200px">
+                <div style="font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--secondary);margin-bottom:4px">Official Travel Partner</div>
+                <h3 style="font-size:1.1rem;font-weight:800;color:var(--primary);margin-bottom:6px">Travel &amp; Accommodation Partner</h3>
+                <p style="font-size:.85rem;color:var(--text-muted);line-height:1.6;margin-bottom:16px">Contact us for hotel bookings, cab arrangements, and travel planning for AGUSICON 2026. Details will be updated shortly — please check back or contact the secretariat.</p>
+                <div style="display:flex;gap:10px;flex-wrap:wrap">
+                  <a href="tel:+919936042720" style="display:inline-flex;align-items:center;gap:7px;background:var(--primary);color:#fff;padding:10px 18px;border-radius:9px;font-size:.83rem;font-weight:700;text-decoration:none">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.16a16 16 0 006.93 6.93l1.52-1.52a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                    Call Secretariat
+                  </a>
+                  <a href="mailto:agusicon2025@gmail.com" style="display:inline-flex;align-items:center;gap:7px;background:var(--white);border:1.5px solid var(--border);color:var(--text);padding:10px 18px;border-radius:9px;font-size:.83rem;font-weight:700;text-decoration:none">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    Email Us
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accommodation -->
+        <div id="accommodation" style="margin-bottom:52px">
+          <div class="section-badge">Where to Stay</div>
+          <h2 class="section-title">Accommodation</h2>
+          <p style="color:var(--text-muted);margin-bottom:24px;line-height:1.7;font-size:.9rem">
+            The following hotels near the conference venue are recommended for delegates. Please contact the hotels directly to check availability and rates.
+          </p>
+
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px">
+
+            <!-- HPB Grand -->
+            <div style="background:var(--white);border:1px solid var(--border);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:14px;transition:box-shadow .18s" onmouseover="this.style.boxShadow='0 6px 24px rgba(17,91,134,.1)'" onmouseout="this.style.boxShadow=''">
+              <div style="display:flex;align-items:center;gap:12px">
+                <div style="width:40px;height:40px;background:var(--bg-light);border:1.5px solid var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                  <svg width="18" height="18" fill="none" stroke="var(--primary)" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                </div>
+                <div>
+                  <div style="font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:2px">Hotel</div>
+                  <div style="font-size:.95rem;font-weight:800;color:var(--primary);line-height:1.2">HPB Grand</div>
+                </div>
+              </div>
+              <a href="tel:+917887074800" style="display:flex;align-items:center;justify-content:center;gap:7px;background:var(--primary);color:#fff;padding:10px 14px;border-radius:9px;font-size:.82rem;font-weight:700;text-decoration:none">
+                <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.16a16 16 0 006.93 6.93l1.52-1.52a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                +91 78870 74800
+              </a>
+            </div>
+
+            <!-- Hotel Glory -->
+            <div style="background:var(--white);border:1px solid var(--border);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:14px;transition:box-shadow .18s" onmouseover="this.style.boxShadow='0 6px 24px rgba(17,91,134,.1)'" onmouseout="this.style.boxShadow=''">
+              <div style="display:flex;align-items:center;gap:12px">
+                <div style="width:40px;height:40px;background:var(--bg-light);border:1.5px solid var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                  <svg width="18" height="18" fill="none" stroke="var(--primary)" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                </div>
+                <div>
+                  <div style="font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:2px">Hotel</div>
+                  <div style="font-size:.95rem;font-weight:800;color:var(--primary);line-height:1.2">Hotel Glory</div>
+                </div>
+              </div>
+              <a href="tel:+919451121939" style="display:flex;align-items:center;justify-content:center;gap:7px;background:var(--primary);color:#fff;padding:10px 14px;border-radius:9px;font-size:.82rem;font-weight:700;text-decoration:none">
+                <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.16a16 16 0 006.93 6.93l1.52-1.52a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                +91 94511 21939
+              </a>
+            </div>
+
+            <!-- Hotel Seraj -->
+            <div style="background:var(--white);border:1px solid var(--border);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:14px;transition:box-shadow .18s" onmouseover="this.style.boxShadow='0 6px 24px rgba(17,91,134,.1)'" onmouseout="this.style.boxShadow=''">
+              <div style="display:flex;align-items:center;gap:12px">
+                <div style="width:40px;height:40px;background:var(--bg-light);border:1.5px solid var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                  <svg width="18" height="18" fill="none" stroke="var(--primary)" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                </div>
+                <div>
+                  <div style="font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:2px">Hotel</div>
+                  <div style="font-size:.95rem;font-weight:800;color:var(--primary);line-height:1.2">Hotel Seraj</div>
+                </div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:7px">
+                <a href="tel:+919939678614" style="display:flex;align-items:center;justify-content:center;gap:7px;background:var(--primary);color:#fff;padding:9px 14px;border-radius:9px;font-size:.82rem;font-weight:700;text-decoration:none">
+                  <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.16a16 16 0 006.93 6.93l1.52-1.52a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                  +91 99396 78614
+                </a>
+                <a href="tel:+918858837077" style="display:flex;align-items:center;justify-content:center;gap:7px;background:var(--white);border:1.5px solid var(--border);color:var(--primary);padding:9px 14px;border-radius:9px;font-size:.82rem;font-weight:700;text-decoration:none">
+                  <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.16a16 16 0 006.93 6.93l1.52-1.52a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                  +91 88588 37077
+                </a>
+              </div>
+            </div>
+
+            <!-- Hotel Meghdoot -->
+            <div style="background:var(--white);border:1px solid var(--border);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:14px;transition:box-shadow .18s" onmouseover="this.style.boxShadow='0 6px 24px rgba(17,91,134,.1)'" onmouseout="this.style.boxShadow=''">
+              <div style="display:flex;align-items:center;gap:12px">
+                <div style="width:40px;height:40px;background:var(--bg-light);border:1.5px solid var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                  <svg width="18" height="18" fill="none" stroke="var(--primary)" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                </div>
+                <div>
+                  <div style="font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:2px">Hotel</div>
+                  <div style="font-size:.95rem;font-weight:800;color:var(--primary);line-height:1.2">Hotel Meghdoot</div>
+                </div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:7px">
+                <a href="tel:+919415225126" style="display:flex;align-items:center;justify-content:center;gap:7px;background:var(--primary);color:#fff;padding:9px 14px;border-radius:9px;font-size:.82rem;font-weight:700;text-decoration:none">
+                  <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.16a16 16 0 006.93 6.93l1.52-1.52a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                  +91 94152 25126
+                </a>
+                <a href="tel:+917007472521" style="display:flex;align-items:center;justify-content:center;gap:7px;background:var(--white);border:1.5px solid var(--border);color:var(--primary);padding:9px 14px;border-radius:9px;font-size:.82rem;font-weight:700;text-decoration:none">
+                  <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.16a16 16 0 006.93 6.93l1.52-1.52a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                  +91 70074 72521
+                </a>
+              </div>
+            </div>
+
+            <!-- Hotel Regenta -->
+            <div style="background:var(--white);border:1px solid var(--border);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:14px;transition:box-shadow .18s" onmouseover="this.style.boxShadow='0 6px 24px rgba(17,91,134,.1)'" onmouseout="this.style.boxShadow=''">
+              <div style="display:flex;align-items:center;gap:12px">
+                <div style="width:40px;height:40px;background:var(--bg-light);border:1.5px solid var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                  <svg width="18" height="18" fill="none" stroke="var(--primary)" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                </div>
+                <div>
+                  <div style="font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:2px">Hotel</div>
+                  <div style="font-size:.95rem;font-weight:800;color:var(--primary);line-height:1.2">Hotel Regenta</div>
+                </div>
+              </div>
+              <a href="tel:+919335789978" style="display:flex;align-items:center;justify-content:center;gap:7px;background:var(--primary);color:#fff;padding:10px 14px;border-radius:9px;font-size:.82rem;font-weight:700;text-decoration:none">
+                <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.16a16 16 0 006.93 6.93l1.52-1.52a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                +91 93357 89978
+              </a>
+            </div>
+
+          </div><!-- /hotel grid -->
+        </div>
+
+      </div>
+
+      <!-- SIDEBAR: Registration Card -->
+      <div class="event-sidebar">
+        <div class="reg-card">
+          <h3>Register for AGUSICON 2026</h3>
+          <p style="font-size:.82rem;color:var(--text-muted);margin-bottom:16px">Secure your spot before seats fill up</p>
+          <div class="reg-fee">&#8377;1,100 onwards <span>date-based tiers</span></div>
+
+          <div style="font-size:.78rem;color:var(--text-muted);background:var(--bg-light);border-radius:8px;padding:12px;margin-bottom:16px;line-height:1.6">
+            <strong style="color:var(--primary);display:block;margin-bottom:4px">Registration Fee Tiers:</strong>
+            Early Bird: &#8377;1,100<br/>
+            Till 31 Mar 2026: &#8377;2,000<br/>
+            1 Apr – 30 Jun 2026: &#8377;2,500<br/>
+            Spot Registration: &#8377;3,000
+          </div>
+
+          <div class="reg-feature">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            2-day access to all sessions
+          </div>
+          <div class="reg-feature">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            CME credits certificate
+          </div>
+          <div class="reg-feature">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Conference kit &amp; materials
+          </div>
+          <div class="reg-feature">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Meals &amp; refreshments
+          </div>
+
+          <!-- Complimentary notice – sidebar -->
+          <div style="background:#fffbeb;border:1.5px solid #fbbf24;border-radius:10px;padding:12px 13px;margin-top:16px;display:flex;align-items:flex-start;gap:10px">
+            <div style="width:30px;height:30px;background:#fef3c7;border:1.5px solid #fcd34d;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px">
+              <svg width="15" height="15" fill="none" stroke="#d97706" stroke-width="2.2" viewBox="0 0 24 24"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>
+            </div>
+            <div>
+              <div style="font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.07em;color:#92400e;margin-bottom:3px">Complimentary Access</div>
+              <div style="font-size:.78rem;color:#78350f;line-height:1.55">Delegates aged <strong>70 years &amp; above</strong> register free of charge.</div>
+            </div>
+          </div>
+
+          <a href="#registration" class="btn btn-Theme2026" style="width:100%;justify-content:center;margin-top:14px">
+            Fill Registration Form
+          </a>
+          <a href="#committee" class="btn btn-outline-primary" style="width:100%;justify-content:center;margin-top:10px;font-size:.85rem">
+            Executive Committee
+          </a>
+          <a href="hands-on-training-2026.html" class="btn btn-outline-primary" style="width:100%;justify-content:center;margin-top:10px;font-size:.85rem;border-color:#fbbf24;color:#92400e;background:#fffbeb">
+            🔬 Hands-on Training
+          </a>
+          <a href="#stall-enquiry" class="btn btn-outline-primary" style="width:100%;justify-content:center;margin-top:10px;font-size:.85rem">
+            Stall / Sponsorship Enquiry
+          </a>
+          <a href="#accommodation" class="btn btn-outline-primary" style="width:100%;justify-content:center;margin-top:10px;font-size:.85rem">
+            Accommodation &amp; Travel
+          </a>
+          <a href="../contact.html" class="btn btn-outline-primary" style="width:100%;justify-content:center;margin-top:10px;font-size:.85rem">
+            Have Questions?
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- REGISTRATION FORM SECTION -->
+<section id="registration" style="background:var(--white);padding:80px 0">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:48px">
+      <div class="section-badge">Register</div>
+      <h2 class="section-title">Delegate Registration Form</h2>
+      <p class="section-subtitle" style="margin:0 auto">Fill in your details below to register for AGUSICON 2026, Bhadohi.</p>
+    </div>
+
+    <!-- Complimentary banner – registration section -->
+    <div style="max-width:780px;margin:0 auto 36px;background:linear-gradient(135deg,#fffbeb,#fef3c7);border:2px solid #fbbf24;border-radius:16px;padding:20px 24px;display:flex;align-items:center;gap:18px;box-shadow:0 4px 20px rgba(251,191,36,.18)">
+      <div style="width:52px;height:52px;background:#fef3c7;border:2px solid #fcd34d;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+        <svg width="24" height="24" fill="none" stroke="#d97706" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>
+      </div>
+      <div style="flex:1">
+        <div style="font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#b45309;margin-bottom:5px">Special Concession</div>
+        <div style="font-size:1rem;font-weight:800;color:#78350f;margin-bottom:4px">Complimentary Registration for Delegates Aged 70 &amp; Above</div>
+        <div style="font-size:.83rem;color:#92400e;line-height:1.6">Senior delegates aged <strong>70 years or above</strong> are warmly welcomed to attend AGUSICON 2026 free of charge. Please mention your age in the comments field while filling the form, or contact the secretariat for assistance.</div>
+      </div>
+    </div>
+
+    <div class="registration-shell">
+      <div class="contact-form-wrap">
+
+        <div class="registration-stepper" aria-label="Registration progress">
+          <div class="stepper-item active" data-step-indicator="1">
+            <div class="stepper-dot">1</div>
+            <div class="stepper-copy">
+              <strong>Delegate Details</strong>
+              <span>Fill in your personal and professional details.</span>
+            </div>
+          </div>
+          <div class="stepper-item" data-step-indicator="2">
+            <div class="stepper-dot">2</div>
+            <div class="stepper-copy">
+              <strong>Payment Details</strong>
+              <span>Select your fee category and upload payment proof.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="reg-step-panel active" data-step-panel="1">
+
+          <div id="regResumeBanner" class="reg-resume-card" hidden>
+            <div class="reg-resume-card-top">
+              <div class="reg-resume-card-icon">
+                <svg width="20" height="20" fill="none" stroke="#d97706" stroke-width="2.2" viewBox="0 0 24 24">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+                </svg>
+              </div>
+              <div class="reg-resume-card-body">
+                <div class="reg-resume-card-label">Registration Found</div>
+                <div class="reg-resume-card-name" id="regResumeName"></div>
+                <div class="reg-resume-card-id" id="regResumeId"></div>
+              </div>
+              <button type="button" id="regResumeDiscard" class="reg-resume-card-dismiss" title="Dismiss">&#10005;</button>
+            </div>
+            <hr class="reg-resume-card-divider" />
+            <div class="reg-resume-card-footer">
+              <div class="reg-resume-card-hint">Your Step 1 details are already saved. Skip directly to payment.</div>
+              <button type="button" id="regResumeContinue" class="btn-resume-continue">
+                <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                Continue to Payment
+              </button>
+            </div>
+          </div>
+
+          <form id="regStepOneForm" action="../../data/registration-handler.php" method="POST">
+            <input type="hidden" name="submission_stage" value="registration" />
+            <input type="hidden" name="event_name" value="AGUSICON 2026 - Bhadohi" />
+            <input type="hidden" name="event_dates" value="25-26 July 2026" />
+            <input type="hidden" name="event_location" value="Blessing Garden, Bhadohi, Uttar Pradesh" />
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name *</label>
+                <input type="text" name="first_name" placeholder="Dr. Firstname" required />
+              </div>
+              <div class="form-group">
+                <label>Last Name *</label>
+                <input type="text" name="last_name" placeholder="Lastname" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Email Address *</label>
+                <input type="email" name="email" placeholder="your@email.com" required />
+              </div>
+              <div class="form-group">
+                <label>Mobile Number *</label>
+                <input type="tel" name="mobile" placeholder="+91 98765 43210" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Qualification *</label>
+                <select name="qualification" required>
+                  <option value="">Select qualification</option>
+                  <option>MS (General Surgery)</option>
+                  <option>MCh (Urology)</option>
+                  <option>DNB (Urology)</option>
+                  <option>MBBS (Senior Resident)</option>
+                  <option>MBBS (PG Student)</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Years of Experience</label>
+                <select name="experience">
+                  <option value="">Select range</option>
+                  <option>0-2 years (Junior/Resident)</option>
+                  <option>3-7 years</option>
+                  <option>8-15 years</option>
+                  <option>15+ years</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Institution / Hospital *</label>
+              <input type="text" name="institution" placeholder="Name of your hospital or institution" required />
+            </div>
+            <div class="form-group">
+              <label>City *</label>
+              <input type="text" name="city" placeholder="Your city" required />
+            </div>
+            <div class="form-group">
+              <label>AGUSI / ASI Membership Number (if applicable)</label>
+              <input type="text" name="area_of_interest" placeholder="Your membership number or leave blank" />
+            </div>
+            <div class="form-group">
+              <label>How did you hear about AGUSICON 2026?</label>
+              <select name="referral_source">
+                <option value="">Select source</option>
+                <option>Email / Circular</option>
+                <option>WhatsApp</option>
+                <option>Colleague / Faculty</option>
+                <option>Social Media</option>
+                <option>AGUSI Website</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Any Comments or Special Requirements</label>
+              <textarea name="comments" rows="3" placeholder="Dietary requirements, accessibility needs, or any other message"></textarea>
+            </div>
+            <div class="form-group">
+              <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-weight:400">
+                <input type="checkbox" name="terms_accepted" value="yes" required style="margin-top:3px;width:auto" />
+                <span>I agree to the <a href="../contact.html" style="color:var(--secondary)">terms and conditions</a> and confirm that the information provided is accurate. *</span>
+              </label>
+            </div>
+            <div id="regStepOneErrorMsg" class="error-msg"></div>
+            <div id="regStepOneSuccessMsg" class="success-msg"></div>
+            <div class="payment-form-actions">
+              <button type="submit" class="btn btn-Theme2026" style="justify-content:center;padding:14px 32px">
+                Save Details &amp; Proceed to Payment
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- STEP 2: Payment -->
+        <div class="reg-step-panel" data-step-panel="2">
+
+          <div class="registration-review-grid" id="registrationReviewCard" hidden>
+          </div>
+
+          <form id="regPaymentForm" action="../../data/registration-handler.php" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="submission_stage" value="payment" />
+            <input type="hidden" name="registration_id" id="registrationIdField" value="" />
+            <input type="hidden" name="event_name" value="AGUSICON 2026 - Bhadohi" />
+            <input type="hidden" name="event_dates" value="25-26 July 2026" />
+            <input type="hidden" name="event_location" value="Blessing Garden, Bhadohi, Uttar Pradesh" />
+            <input type="hidden" name="first_name" id="paymentFirstName" value="" />
+            <input type="hidden" name="last_name" id="paymentLastName" value="" />
+            <input type="hidden" name="email" id="paymentEmail" value="" />
+            <input type="hidden" name="mobile" id="paymentMobile" value="" />
+            <input type="hidden" name="qualification" id="paymentQualification" value="" />
+            <input type="hidden" name="experience" id="paymentExperience" value="" />
+            <input type="hidden" name="institution" id="paymentInstitution" value="" />
+            <input type="hidden" name="city" id="paymentCity" value="" />
+            <input type="hidden" name="area_of_interest" id="paymentAreaOfInterest" value="" />
+            <input type="hidden" name="referral_source" id="paymentReferralSource" value="" />
+            <input type="hidden" name="comments" id="paymentComments" value="" />
+            <input type="hidden" name="terms_accepted" id="paymentTermsAccepted" value="yes" />
+            <input type="hidden" name="base_amount" id="baseAmountField" value="3000" />
+            <input type="hidden" name="spouse_amount" id="spouseAmountField" value="0" />
+            <input type="hidden" name="total_amount" id="totalAmountField" value="3000" />
+
+            <div class="form-group">
+              <label>Choose Registration Fee Category *</label>
+              <div class="fee-choice-grid">
+                <div class="fee-choice">
+                  <input type="radio" id="feePgStudent" name="payment_category" value="pg_student" required />
+                  <label for="feePgStudent">
+                    <div class="fee-choice-title">
+                      <span>PG Student</span>
+                      <span class="fee-choice-price">&#8377;1,000</span>
+                    </div>
+                    <div class="fee-choice-copy">Bonafide certificate from institution required. Upload along with payment screenshot.</div>
+                  </label>
+                </div>
+                <div class="fee-choice">
+                  <input type="radio" id="feeOtherDelegate" name="payment_category" value="other_delegate" checked required />
+                  <label for="feeOtherDelegate">
+                    <div class="fee-choice-title">
+                      <span>Other Delegate</span>
+                      <span class="fee-choice-price">&#8377;3,000</span>
+                    </div>
+                    <div class="fee-choice-copy">For all delegates other than PG Students.</div>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="fee-summary">
+              <h3>Payment Summary</h3>
+              <div class="fee-summary-row">
+                <span>Delegate category</span>
+                <strong id="selectedCategoryLabel">Other Delegate</strong>
+              </div>
+              <div class="fee-summary-row">
+                <span>Registration fee</span>
+                <strong id="baseAmountLabel">&#8377;3,000</strong>
+              </div>
+              <div class="fee-summary-row total">
+                <span>Total payable</span>
+                <strong id="totalAmountLabel">&#8377;3,000</strong>
+              </div>
+            </div>
+
+            <div class="qr-card">
+              <img id="upiQrImg" alt="UPI QR Code" style="width:180px;height:180px;display:block;border-radius:12px;border:1px solid var(--border);">
+              <p>Scan via any UPI app &mdash; amount fills automatically.</p>
+              <div style="margin-top:12px;padding:10px 14px;background:var(--bg,#f8fafc);border:1px solid var(--border);border-radius:10px;text-align:center">
+                <p style="font-size:.75rem;color:var(--text-muted);margin:0 0 8px">Or enter UPI ID manually in your app</p>
+                <p style="font-size:.95rem;font-weight:700;color:var(--primary);margin:0 0 8px;letter-spacing:.02em;word-break:break-all">0795307A0182926.bqr@kotak</p>
+                <button type="button" id="copyUpiBtn" onclick="copyUpiId()" style="display:inline-flex;align-items:center;gap:5px;padding:5px 12px;font-size:.78rem;font-weight:600;color:var(--primary);background:transparent;border:1.5px solid var(--primary);border-radius:6px;cursor:pointer;transition:background .2s,color .2s,border-color .2s">
+                  <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                  Click to copy
+                </button>
+                <script>
+                function copyUpiId() {
+                  navigator.clipboard.writeText('0795307A0182926.bqr@kotak').then(function() {
+                    var b = document.getElementById('copyUpiBtn');
+                    b.innerHTML = '<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Copied!';
+                    b.style.background = '#059669';
+                    b.style.color = '#fff';
+                    b.style.borderColor = '#059669';
+                    setTimeout(function() {
+                      b.innerHTML = '<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Click to copy';
+                      b.style.background = '';
+                      b.style.color = '';
+                      b.style.borderColor = '';
+                    }, 2000);
+                  });
+                }
+                </script>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Amount Paid *</label>
+                <input type="text" id="paymentAmountField" name="payment_amount" value="Rs. 3,000" readonly required />
+              </div>
+              <div class="form-group">
+                <label>Reference Number *</label>
+                <input type="text" name="payment_reference_number" placeholder="UTR / transaction reference" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>UPI Account Used *</label>
+                <input type="text" name="upi_account" placeholder="yourupi@bank or payer account name" required />
+              </div>
+              <div class="form-group">
+                <label>Payment Screenshot *</label>
+                <input type="file" id="paymentScreenshotInput" name="payment_screenshot" accept=".png,.jpg,.jpeg,.webp" required />
+                <div id="paymentScreenshotPreview" class="payment-proof-preview" hidden>
+                  <div class="payment-proof-thumb">
+                    <img id="paymentScreenshotImage" src="" alt="Uploaded payment proof preview" />
+                  </div>
+                  <div class="payment-proof-copy">
+                    <strong id="paymentScreenshotName"></strong>
+                    <span>Selected payment proof</span>
+                  </div>
+                  <button type="button" id="paymentScreenshotRemove" class="payment-proof-remove" aria-label="Remove">&times;</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="payment-form-actions">
+              <button type="button" id="regBackToStepOne" class="btn btn-outline-primary">Back</button>
+              <button type="submit" class="btn btn-primary" style="justify-content:center;padding:14px 26px">
+                Submit Payment Details
+              </button>
+            </div>
+
+            <div id="regPaymentErrorMsg" class="error-msg"></div>
+            <div id="regPaymentSuccessMsg" class="success-msg"></div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div style="display:flex;align-items:center;gap:10px">
+          <a href="../../index.html" class="nav-logo">
+            <img class="nav-img" src="../../images/logo.png" alt="AGUSICON 2026" />
+          </a>
+        </div>
+        <p style="margin-top:14px">
+          National Conference of the Association of Genitourinary Surgeons of India (AGUSI), organised by the UP Chapter of ASI. Bhadohi, Uttar Pradesh – 25-26 July 2026.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../about.html">About AGUSI</a></li>
+          <li><a href="../committee.html">Committee</a></li>
+          <li><a href="../events.html">Events</a></li>
+          <li><a href="../gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>AGUSICON 2026</h4>
+        <ul>
+          <li><a href="#about-event">About the Conference</a></li>
+          <li><a href="#committee">Executive Committee</a></li>
+          <li><a href="#registration">Register Now</a></li>
+          <li><a href="#sponsorship">Stall Booking</a></li>
+          <li><a href="#venue">Venue</a></li>
+          <li><a href="#travel">Travel Info</a></li>
+          <li><a href="#accommodation">Accommodation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+919936042720">+91 9936042720</a></li>
+          <li><a href="tel:+917838768692">+91 7838768692</a></li>
+          <li><a href="mailto:agusicon2025@gmail.com">agusicon2025@gmail.com</a></li>
+          <li><a href="../contact.html">Contact Form</a></li>
+          <li><span style="font-size:.82rem;color:var(--text-muted)">Blessing Garden, Bypass Road,<br>Ramraipur, Bhadohi – 221401</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Association of Genitourinary Surgeons of India (AGUSI) – UP Chapter of ASI. All rights reserved.</p>
+      <div class="social-links">
+        <a href="#" class="social-link"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a href="#" class="social-link"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="#" class="social-link"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://www.google.com/recaptcha/api.js?render=6LfrGiAtAAAAAB2jKYiWo5r5_dTEipv9tN6XfAWy"></script>
+<script>window.RECAPTCHA_SITE_KEY = '6LfrGiAtAAAAAB2jKYiWo5r5_dTEipv9tN6XfAWy';</script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+<script src="../../js/main.js"></script>
+
+<!-- Scientific Programme day switcher -->
+<script>
+function switchProgDay(day) {
+  document.querySelectorAll('.prog-day').forEach(function(d){ d.classList.remove('active'); });
+  document.querySelectorAll('.prog-tab').forEach(function(t){ t.classList.remove('active'); });
+  document.getElementById('prog-day-' + day).classList.add('active');
+  document.querySelectorAll('.prog-tab')[day - 1].classList.add('active');
+}
+</script>
+
+<!-- ── Hands-on Training Popup ── -->
+<style>
+  .hot-overlay{position:fixed;inset:0;z-index:9999;background:rgba(5,18,32,.72);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+  .hot-overlay.show{opacity:1;pointer-events:all;}
+  .hot-modal{background:linear-gradient(135deg,#0c2d47 0%,#115B86 55%,#1a7ca8 100%);border-radius:22px;padding:34px 32px 28px;max-width:560px;width:100%;position:relative;box-shadow:0 28px 80px rgba(0,0,0,.55);transform:scale(.9) translateY(20px);transition:transform .38s cubic-bezier(.34,1.4,.64,1);overflow:hidden;}
+  .hot-overlay.show .hot-modal{transform:scale(1) translateY(0);}
+  .hot-modal::before{content:'';position:absolute;top:-60px;right:-60px;width:260px;height:260px;background:radial-gradient(circle,rgba(48,174,195,.25),transparent 70%);pointer-events:none;}
+  .hot-modal-close{position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1.1rem;line-height:1;transition:background .18s;z-index:1;}
+  .hot-modal-close:hover{background:rgba(255,255,255,.25);}
+  .hot-modal-tag{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:#fff;font-size:.67rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:5px 13px;border-radius:20px;margin-bottom:16px;position:relative;}
+  .hot-modal-tag .dot{width:7px;height:7px;border-radius:50%;background:#4ade80;flex-shrink:0;animation:hotpulse 1.5s ease infinite;}
+  @keyframes hotpulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(1.3)}}
+  .hot-modal h2{font-size:1.35rem;font-weight:800;color:#fff;margin-bottom:7px;position:relative;}
+  .hot-modal-sub{font-size:.83rem;color:rgba(255,255,255,.72);line-height:1.65;margin-bottom:22px;position:relative;}
+  .hot-module-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;position:relative;}
+  .hot-module{background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.18);border-radius:13px;padding:17px 16px;}
+  .hot-module-num{font-size:.62rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:7px;}
+  .hot-module-title{font-size:.85rem;font-weight:800;color:#fff;line-height:1.4;margin-bottom:13px;}
+  .hot-module-fee{font-size:1.2rem;font-weight:800;color:#fde68a;}
+  .hot-module-badge{display:inline-block;font-size:.66rem;font-weight:700;background:rgba(252,211,77,.15);border:1px solid rgba(252,211,77,.28);color:#fde68a;padding:2px 9px;border-radius:20px;margin-top:5px;}
+  .hot-modal-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;position:relative;}
+  .hot-modal-note{font-size:.78rem;color:rgba(255,255,255,.68);font-weight:600;display:flex;align-items:center;gap:7px;}
+  .hot-modal-cta{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#115B86;padding:11px 22px;border-radius:10px;font-weight:800;font-size:.87rem;text-decoration:none;box-shadow:0 4px 20px rgba(0,0,0,.22);transition:transform .15s,box-shadow .15s;white-space:nowrap;}
+  .hot-modal-cta:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.3);}
+  @media(max-width:500px){.hot-module-grid{grid-template-columns:1fr;}.hot-modal{padding:26px 20px 22px;}.hot-modal-footer{flex-direction:column;align-items:flex-start;}.hot-modal-cta{width:100%;justify-content:center;}}
+</style>
+
+<div class="hot-overlay" id="hotOverlay" role="dialog" aria-modal="true" aria-label="Hands-on Training">
+  <div class="hot-modal">
+    <button class="hot-modal-close" id="hotClose" aria-label="Close">&times;</button>
+    <div class="hot-modal-tag"><span class="dot"></span>New Addition &mdash; Limited Seats</div>
+    <h2>Hands-on Surgical Training</h2>
+    <p class="hot-modal-sub">Practical, expert-guided sessions at AGUSICON 2026, Bhadohi.<br>Only 20 seats per module &mdash; enroll early to secure your place.</p>
+    <div class="hot-module-grid">
+      <div class="hot-module">
+        <div class="hot-module-num">Module 1</div>
+        <div class="hot-module-title">Initial Puncture for PCNL with C-Arm Control</div>
+        <div class="hot-module-fee">&#8377;4,000</div>
+        <div class="hot-module-badge">Enrollment Fee</div>
+      </div>
+      <div class="hot-module">
+        <div class="hot-module-num">Module 2</div>
+        <div class="hot-module-title">TURP (Transurethral Resection of Prostate)</div>
+        <div class="hot-module-fee">&#8377;3,000</div>
+        <div class="hot-module-badge">Enrollment Fee</div>
+      </div>
+    </div>
+    <div class="hot-modal-footer">
+      <div class="hot-modal-note">
+        <svg width="14" height="14" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="2.5" viewBox="0 0 24 24" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        First come, first served
+      </div>
+      <a href="hands-on-training-2026.html" class="hot-modal-cta">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        Enroll for Training
+      </a>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var KEY='agusicon_hot_shown';
+  var overlay=document.getElementById('hotOverlay');
+  var closeBtn=document.getElementById('hotClose');
+  function openPopup(){overlay.classList.add('show');document.body.style.overflow='hidden';}
+  function closePopup(){overlay.classList.remove('show');document.body.style.overflow='';sessionStorage.setItem(KEY,'1');}
+  if(!sessionStorage.getItem(KEY)){setTimeout(openPopup,1400);}
+  closeBtn.addEventListener('click',closePopup);
+  overlay.addEventListener('click',function(e){if(e.target===overlay)closePopup();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&overlay.classList.contains('show'))closePopup();});
+})();
+</script>
+
+<!-- Fee category → amount map for JS -->
+<script>
+window.AGUSICON_FEES = {
+  pg_student:     1000,
+  other_delegate: 3000
+};
+window.AGUSICON_FEE_LABELS = {
+  pg_student:     'PG Student',
+  other_delegate: 'Other Delegate'
+};
+</script>
+
+</body>
+</html>
