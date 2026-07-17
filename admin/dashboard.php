@@ -28,6 +28,13 @@ function parseCsv(string $path): array {
     return $rows;
 }
 
+/* ── Training confirmation tracking ── */
+$TRACK_FILE    = $CSV_DIR . '/training-sent.json';
+$sentTracking  = [];
+if (is_file($TRACK_FILE)) {
+    $sentTracking = json_decode(file_get_contents($TRACK_FILE), true) ?: [];
+}
+
 $combined = parseCsv($CSV_COMBINED);
 $leads    = parseCsv($CSV_LEADS);
 $payments = parseCsv($CSV_PAYMENTS);
@@ -68,7 +75,7 @@ $colDefs = [
         'Submitted At','Event','Company','Contact Person','Mobile','Email','Stall Interest','Message',
     ],
     'training' => [
-        'Submitted At','Name','Mobile','Email','Module','Amount','Payment Reference','Proof File Path',
+        'Status','Submitted At','Name','Mobile','Email','Module','Amount','Payment Reference','Proof File Path',
     ],
 ];
 
@@ -483,6 +490,21 @@ $activeCols = $colDefs[$tab];
     .badge-pending   { background:#fef9c3; color:#854d0e; }
     .badge-yes       { background:#dcfce7; color:#15803d; }
     .badge-no        { background:#f1f5f9; color:#64748b; }
+    .badge-new-entry {
+      background:#fef9c3; color:#854d0e;
+      display:inline-flex; align-items:center; gap:5px;
+    }
+    .badge-new-entry .pulse-dot {
+      width:7px; height:7px; border-radius:50%; background:#f59e0b;
+      animation: pulseDot 1.6s ease-in-out infinite;
+      flex-shrink:0;
+    }
+    @keyframes pulseDot {
+      0%,100% { opacity:1; transform:scale(1); }
+      50%      { opacity:.4; transform:scale(.6); }
+    }
+    .badge-sent { background:#dcfce7; color:#15803d; display:inline-flex; align-items:center; gap:5px; white-space:nowrap; }
+    .badge-sent-date { font-size:.68rem; font-weight:500; color:#16a34a; margin-left:2px; }
 
     /* Approve button */
     .btn-approve {
@@ -794,8 +816,18 @@ $activeCols = $colDefs[$tab];
               <?php foreach ($activeCols as $col): ?>
                 <?php
                   $val = $row[$col] ?? '';
+                  // ── Training Status (virtual column) ──
+                  if ($col === 'Status' && $tab === 'training') {
+                      $tKey    = md5(($row['Email'] ?? '') . ($row['Submitted At'] ?? ''));
+                      $sentAt  = $sentTracking[$tKey] ?? null;
+                      if ($sentAt) {
+                          $sentLabel = date('d M, g:i A', strtotime($sentAt));
+                          echo '<td><span class="badge badge-sent">&#10003; Sent<span class="badge-sent-date">' . $sentLabel . '</span></span></td>';
+                      } else {
+                          echo '<td><span class="badge badge-new-entry"><span class="pulse-dot"></span>New Entry</span></td>';
+                      }
                   // Render badges for certain columns
-                  if ($col === 'Payment Status') {
+                  } elseif ($col === 'Payment Status') {
                       if ($val === 'Payment Confirmed') echo '<td><span class="badge badge-confirmed">&#10003; Confirmed</span></td>';
                       elseif ($val === 'Payment Received') echo '<td><span class="badge badge-paid">Paid</span></td>';
                       elseif ($val === 'Registration Only') echo '<td><span class="badge badge-regonly">Reg Only</span></td>';
@@ -988,6 +1020,14 @@ $(function () {
           btnSend.prop('disabled', false).html('<svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.3" viewBox="0 0 24 24"><path d="M22 2L11 13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send Payment Confirmation');
           if (res.ok) {
             showToast('&#10003; ' + res.message, 'success');
+            // Flip status badges for sent rows immediately
+            var now = new Date();
+            var nowLabel = now.toLocaleDateString('en-IN',{day:'2-digit',month:'short'}) + ', ' +
+                           now.toLocaleTimeString('en-IN',{hour:'numeric',minute:'2-digit',hour12:true});
+            $('.row-cb:checked').each(function () {
+              $(this).closest('tr').find('td').first().next()  // first data td = Status
+                .html('<span class="badge badge-sent">&#10003; Sent<span class="badge-sent-date">' + nowLabel + '</span></span>');
+            });
             $('.row-cb, #chkAll').prop('checked', false);
             updateBar();
           } else {

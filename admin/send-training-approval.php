@@ -560,14 +560,34 @@ foreach ($selected as $r) {
 
         $mail->send();
         $sent++;
+
+        // ── Record in tracking log ──────────────────────
+        $sentKey = md5($email . $subAt);
+        $sentKeys[$sentKey] = date('Y-m-d H:i:s');
     } catch (\Throwable $e) {
         $errors[] = "Failed for {$name}: " . $e->getMessage();
     }
 }
 
+// Persist tracking log
+$trackPath = dirname(__DIR__) . '/data/training-sent.json';
+$existing  = [];
+if (is_file($trackPath)) {
+    $existing = json_decode(file_get_contents($trackPath), true) ?: [];
+}
+$merged = array_merge($existing, $sentKeys ?? []);
+$fh = fopen($trackPath, 'w');
+if ($fh && flock($fh, LOCK_EX)) {
+    fwrite($fh, json_encode($merged, JSON_PRETTY_PRINT));
+    fflush($fh);
+    flock($fh, LOCK_UN);
+    fclose($fh);
+}
+
 sendJson([
-    'ok'     => $sent > 0,
-    'sent'   => $sent,
-    'errors' => $errors,
-    'message'=> $sent === 1 ? '1 confirmation email sent.' : "{$sent} confirmation emails sent.",
+    'ok'       => $sent > 0,
+    'sent'     => $sent,
+    'errors'   => $errors,
+    'sentKeys' => array_keys($sentKeys ?? []),
+    'message'  => $sent === 1 ? '1 confirmation email sent.' : "{$sent} confirmation emails sent.",
 ]);
