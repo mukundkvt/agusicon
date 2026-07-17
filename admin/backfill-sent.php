@@ -1,9 +1,4 @@
 <?php
-session_start();
-if (empty($_SESSION['admin_logged_in'])) {
-    http_response_code(403); exit('Forbidden');
-}
-
 $csvPath   = dirname(__DIR__) . '/data/training-enrollments.csv';
 $trackPath = dirname(__DIR__) . '/data/training-sent.json';
 $now       = date('Y-m-d H:i:s');
