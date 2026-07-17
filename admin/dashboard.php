@@ -543,6 +543,98 @@ $activeCols = $colDefs[$tab];
       .export-btn span { display: none; }
     }
 
+    /* ── Custom column picker dropdown ── */
+    .col-picker {
+      position: fixed;
+      width: 272px;
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.15), 0 3px 10px rgba(0,0,0,0.07);
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      animation: cpFadeIn .14s ease;
+    }
+    @keyframes cpFadeIn { from { opacity:0; transform:translateY(-6px); } to { opacity:1; transform:translateY(0); } }
+    .col-picker-head {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 13px 16px 11px;
+      background: #f8fafc;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .col-picker-title {
+      font-size: .84rem; font-weight: 700; color: var(--primary);
+      display: flex; align-items: center; gap: 7px;
+    }
+    .col-picker-close {
+      background: none; border: none; cursor: pointer;
+      color: var(--muted); font-size: 1rem; line-height: 1;
+      padding: 2px 4px; border-radius: 4px; transition: color .15s;
+    }
+    .col-picker-close:hover { color: var(--text); }
+    .col-picker-search {
+      padding: 10px 12px 8px;
+      border-bottom: 1px solid #f1f5f9;
+      position: relative;
+    }
+    .col-picker-search svg {
+      position: absolute; left: 21px; top: 50%; transform: translateY(-50%);
+      color: var(--muted); pointer-events: none;
+    }
+    .col-picker-search input {
+      width: 100%; padding: 7px 10px 7px 32px;
+      border: 1.5px solid var(--border); border-radius: 8px;
+      font-family: 'Inter', sans-serif; font-size: .82rem;
+      color: var(--text); outline: none;
+      transition: border-color .2s;
+    }
+    .col-picker-search input:focus { border-color: var(--accent); }
+    .col-picker-list {
+      overflow-y: auto; max-height: 300px;
+      padding: 6px 0;
+    }
+    .col-pick-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 8px 16px; cursor: pointer;
+      font-size: .84rem; color: var(--text);
+      transition: background .12s;
+      user-select: none;
+    }
+    .col-pick-item:hover { background: #f1f5f9; }
+    .col-pick-item.hidden-row { color: var(--muted); }
+    .col-pick-item input[type=checkbox] {
+      width: 15px; height: 15px; flex-shrink: 0;
+      accent-color: var(--accent); cursor: pointer;
+    }
+    .col-pick-item .col-name { flex: 1; }
+    .col-pick-none { padding: 18px 16px; color: var(--muted); font-size: .82rem; text-align: center; }
+    .col-picker-foot {
+      display: flex; gap: 8px; padding: 10px 12px;
+      border-top: 1px solid #f1f5f9; background: #fafbfd;
+    }
+    .cp-foot-btn {
+      flex: 1; padding: 7px 0; border-radius: 8px;
+      font-family: 'Inter', sans-serif; font-size: .79rem; font-weight: 600;
+      cursor: pointer; transition: all .15s; border: 1.5px solid;
+    }
+    .cp-foot-btn.show-all {
+      background: var(--primary); color: #fff; border-color: var(--primary);
+    }
+    .cp-foot-btn.show-all:hover { background: var(--accent); border-color: var(--accent); }
+    .cp-foot-btn.reset {
+      background: #fff; color: var(--muted); border-color: var(--border);
+    }
+    .cp-foot-btn.reset:hover { border-color: #94a3b8; color: var(--text); }
+    /* count badge on the Columns button */
+    #btnCols .cp-badge {
+      display: inline-flex; align-items: center; justify-content: center;
+      background: var(--primary); color: #fff;
+      font-size: .65rem; font-weight: 700; border-radius: 10px;
+      padding: 1px 6px; margin-left: 2px; line-height: 1.4;
+    }
+
     /* ── Training bulk-action bar ── */
     .bulk-bar {
       display: none;
@@ -894,6 +986,26 @@ $activeCols = $colDefs[$tab];
 
 </main>
 
+<!-- Column Picker Panel -->
+<div id="colPicker" class="col-picker" style="display:none" role="dialog" aria-label="Configure columns">
+  <div class="col-picker-head">
+    <span class="col-picker-title">
+      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+      Configure Columns
+    </span>
+    <button class="col-picker-close" id="colPickerClose" title="Close">&times;</button>
+  </div>
+  <div class="col-picker-search">
+    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="search" id="colPickerSearch" placeholder="Search columns…" autocomplete="off">
+  </div>
+  <div class="col-picker-list" id="colPickerList"></div>
+  <div class="col-picker-foot">
+    <button class="cp-foot-btn show-all" id="cpShowAll">Show All</button>
+    <button class="cp-foot-btn reset" id="cpReset">Reset Default</button>
+  </div>
+</div>
+
 <!-- JS -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
@@ -903,7 +1015,6 @@ $activeCols = $colDefs[$tab];
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
 <script src="https://cdn.datatables.net/buttons/3.0.2/js/buttons.html5.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/3.0.2/js/buttons.print.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/3.0.2/js/buttons.colVis.min.js"></script>
 
 <script>
 $(function () {
@@ -924,8 +1035,7 @@ $(function () {
       { extend: 'pdfHtml5',   title: 'AGUSICON 2026 Registrations — Bhadohi',
         orientation: 'landscape', pageSize: 'A3',
         exportOptions: { columns: ':visible:not(.no-export)' } },
-      { extend: 'print',      exportOptions: { columns: ':visible:not(.no-export)' } },
-      { extend: 'colvis',     postfixButtons: ['colvisRestore'] }
+      { extend: 'print',      exportOptions: { columns: ':visible:not(.no-export)' } }
     ]
   });
 
@@ -1055,18 +1165,98 @@ $(function () {
   $('#btnExcel').on('click', function () { table.button(1).trigger(); });
   $('#btnPdf'  ).on('click', function () { table.button(2).trigger(); });
   $('#btnPrint').on('click', function () { table.button(3).trigger(); });
-  $('#btnCols').on('click', function () {
-    table.button(4).trigger();
-    // Reposition the ColVis dropdown near our custom button
-    requestAnimationFrame(function () {
-      var $col = $('div.dt-button-collection');
-      if (!$col.length) return;
-      var rect = document.getElementById('btnCols').getBoundingClientRect();
-      var cw   = $col.outerWidth(true) || 220;
-      var left = rect.left;
-      if (left + cw > window.innerWidth - 8) left = window.innerWidth - cw - 8;
-      $col.css({ position: 'fixed', top: rect.bottom + 4, left: left, right: 'auto', zIndex: 9999 });
+  /* ── Custom Column Picker ─────────────────────────────── */
+  function updateColBadge() {
+    var hidden = 0;
+    table.columns().every(function () {
+      var $th = $(this.header());
+      if ($th.hasClass('no-export') || $th.hasClass('cb-col')) return;
+      if (!this.visible()) hidden++;
     });
+    var $badge = $('#btnCols .cp-badge');
+    if (hidden > 0) {
+      if (!$badge.length) $('#btnCols').append('<span class="cp-badge">' + hidden + '</span>');
+      else $badge.text(hidden);
+    } else {
+      $badge.remove();
+    }
+  }
+
+  function buildColPicker() {
+    var $list = $('#colPickerList').empty();
+    table.columns().every(function (i) {
+      var $th = $(this.header());
+      if ($th.hasClass('no-export') || $th.hasClass('cb-col')) return;
+      var name = $th.text().trim() || ('Column ' + (i + 1));
+      var vis  = this.visible();
+      var $item = $('<label class="col-pick-item">' +
+        '<input type="checkbox" class="cp-check" data-col="' + i + '"' + (vis ? ' checked' : '') + '>' +
+        '<span class="cp-col-name">' + name + '</span>' +
+        '</label>');
+      $list.append($item);
+    });
+    updateColBadge();
+  }
+
+  function openColPicker() {
+    buildColPicker();
+    var $panel = $('#colPicker');
+    var rect = document.getElementById('btnCols').getBoundingClientRect();
+    var pw = 240;
+    var left = rect.left;
+    if (left + pw > window.innerWidth - 8) left = window.innerWidth - pw - 8;
+    $panel.css({ position: 'fixed', top: (rect.bottom + 4) + 'px', left: left + 'px', width: pw + 'px' }).show();
+    $('#colPickerSearch').val('').trigger('input').focus();
+  }
+
+  function closeColPicker() { $('#colPicker').hide(); }
+
+  $('#btnCols').on('click', function (e) {
+    e.stopPropagation();
+    if ($('#colPicker').is(':visible')) { closeColPicker(); return; }
+    openColPicker();
+  });
+
+  $('#colPickerClose').on('click', closeColPicker);
+
+  $('#colPickerSearch').on('input', function () {
+    var q = $(this).val().toLowerCase();
+    $('#colPickerList .col-pick-item').each(function () {
+      $(this).toggle($(this).find('.cp-col-name').text().toLowerCase().indexOf(q) !== -1);
+    });
+  });
+
+  $(document).on('change', '.cp-check', function () {
+    table.column(parseInt(this.dataset.col)).visible(this.checked).draw(false);
+    updateColBadge();
+  });
+
+  $('#cpShowAll').on('click', function () {
+    table.columns().every(function () {
+      var $th = $(this.header());
+      if ($th.hasClass('no-export') || $th.hasClass('cb-col')) return;
+      this.visible(true);
+    });
+    table.draw(false);
+    buildColPicker();
+  });
+
+  $('#cpReset').on('click', function () {
+    table.columns().every(function () {
+      var $th = $(this.header());
+      if ($th.hasClass('no-export') || $th.hasClass('cb-col')) return;
+      this.visible(true);
+    });
+    table.draw(false);
+    buildColPicker();
+  });
+
+  $(document).on('mousedown', function (e) {
+    if (!$(e.target).closest('#colPicker, #btnCols').length) closeColPicker();
+  });
+
+  $(document).on('keydown', function (e) {
+    if (e.key === 'Escape') closeColPicker();
   });
 
   /* ── Render custom info + pagination after every draw ── */
