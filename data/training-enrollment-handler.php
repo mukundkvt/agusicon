@@ -121,6 +121,74 @@ if (loadPhpMailer()) {
             </div>";
         $mail->AltBody = "Hands-on Training Enrollment\nName: {$name}\nMobile: {$mobile}\nEmail: {$email}\nModule: {$module}\nAmount: {$amount}\nRef: {$payRef}";
         $mail->send();
+
+        // ── ACK email to registrant ──────────────────────────
+        $moduleLabel = (stripos($module, 'pcnl') !== false || stripos($module, 'puncture') !== false)
+            ? 'Module 1 – Initial Puncture for PCNL with C-Arm Control'
+            : (stripos($module, 'turp') !== false ? 'Module 2 – TURP (Transurethral Resection of Prostate)' : $module);
+
+        $ack = new \PHPMailer\PHPMailer\PHPMailer(true);
+        $ack->isSMTP();
+        $ack->Host       = 'smtp-relay.brevo.com';
+        $ack->SMTPAuth   = true;
+        $ack->Username   = 'ae1b45001@smtp-brevo.com';
+        $ack->Password   = 'DqKY7Lsg4rUzQpWx';
+        $ack->SMTPSecure = \PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;
+        $ack->Port       = 587;
+        $ack->Timeout    = 8;
+        $ack->CharSet    = 'UTF-8';
+        $ack->isHTML(true);
+        $ack->setFrom('info@agusicon.com', 'AGUSICON 2026');
+        $ack->addAddress($email, $name);
+        $ack->addBCC('mukund.rgb@gmail.com');
+        $ack->Subject = 'Enrollment Received — AGUSICON 2026 Hands-on Training';
+        $safeName      = htmlspecialchars($name);
+        $safeModule    = htmlspecialchars($moduleLabel);
+        $safeAmount    = htmlspecialchars($amount);
+        $safeRef       = htmlspecialchars($payRef);
+        $ack->Body = "
+<div style='font-family:Arial,sans-serif;background:#f4f7fb;padding:32px 0'>
+<div style='max-width:560px;margin:0 auto;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.10)'>
+  <div style='background:linear-gradient(135deg,#0b3d5e 0%,#115B86 100%);padding:28px 36px 22px;text-align:center'>
+    <div style='font-size:22px;font-weight:800;color:#fff'>AGUSICON 2026</div>
+    <div style='font-size:11px;color:#b4d2ee;margin-top:4px;letter-spacing:.04em'>NATIONAL UROLOGY CONFERENCE</div>
+    <div style='width:48px;height:3px;background:#b48c1e;margin:12px auto 0;border-radius:2px'></div>
+  </div>
+  <div style='padding:30px 36px'>
+    <div style='font-size:17px;font-weight:700;color:#0b3d5e;margin-bottom:8px'>Enrollment Received</div>
+    <p style='font-size:14px;color:#374151;line-height:1.7;margin:0 0 20px'>
+      Dear <strong>{$safeName}</strong>,<br>
+      Thank you for enrolling in the <strong>Hands-on Training</strong> programme at AGUSICON 2026. We have received your enrollment and payment details.
+    </p>
+    <div style='background:#f0f7ff;border:1.5px solid #bdd7f0;border-radius:10px;padding:18px 20px;margin-bottom:20px'>
+      <table style='width:100%;border-collapse:collapse;font-size:13.5px'>
+        <tr><td style='padding:7px 0;color:#6b7280;font-weight:700;width:42%'>MODULE</td>
+            <td style='padding:7px 0;color:#0b3d5e;font-weight:600'>{$safeModule}</td></tr>
+        <tr style='border-top:1px solid #dce9f5'><td style='padding:7px 0;color:#6b7280;font-weight:700'>AMOUNT</td>
+            <td style='padding:7px 0;color:#0b3d5e;font-weight:600'>Rs. {$safeAmount}</td></tr>
+        <tr style='border-top:1px solid #dce9f5'><td style='padding:7px 0;color:#6b7280;font-weight:700'>PAYMENT REF.</td>
+            <td style='padding:7px 0;color:#0b3d5e;font-weight:600'>{$safeRef}</td></tr>
+        <tr style='border-top:1px solid #dce9f5'><td style='padding:7px 0;color:#6b7280;font-weight:700'>EVENT DATE</td>
+            <td style='padding:7px 0;color:#0b3d5e;font-weight:600'>25&ndash;26 July 2026</td></tr>
+        <tr style='border-top:1px solid #dce9f5'><td style='padding:7px 0;color:#6b7280;font-weight:700'>VENUE</td>
+            <td style='padding:7px 0;color:#0b3d5e;font-weight:600'>Blessing Garden, Bhadohi, Uttar Pradesh</td></tr>
+      </table>
+    </div>
+    <div style='background:#fefce8;border:1.5px solid #fde047;border-radius:10px;padding:14px 18px;margin-bottom:20px'>
+      <div style='font-size:12.5px;color:#854d0e;line-height:1.6'>
+        <strong>Next Step:</strong> Our team will verify your payment and send a formal <strong>Payment Confirmation email</strong> with a PDF receipt within 24 hours.
+        If you have any questions, please reply to this email.
+      </div>
+    </div>
+    <p style='font-size:13px;color:#374151;line-height:1.7;margin:0'>We look forward to an enriching hands-on experience with you at AGUSICON 2026!</p>
+  </div>
+  <div style='background:#0b3d5e;padding:18px 36px;text-align:center'>
+    <div style='font-size:12px;color:#b4d2ee'>AGUSICON 2026 &bull; agusicon.com &bull; agusicon2025@gmail.com</div>
+    <div style='font-size:11px;color:#6b97b8;margin-top:5px'>Blessing Garden, Bhadohi, Uttar Pradesh</div>
+  </div>
+</div></div>";
+        $ack->AltBody = "Dear {$name},\nThank you for enrolling in AGUSICON 2026 Hands-on Training.\nModule: {$moduleLabel}\nAmount: Rs. {$amount}\nRef: {$payRef}\n\nWe will verify your payment and send confirmation within 24 hours.";
+        $ack->send();
     } catch (\Throwable $e) {
         // Email failure is silent — CSV was already saved
     }

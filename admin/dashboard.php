@@ -521,6 +521,46 @@ $activeCols = $colDefs[$tab];
       .export-btn span { display: none; }
     }
 
+    /* ── Training bulk-action bar ── */
+    .bulk-bar {
+      display: none;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 20px;
+      background: #eff6ff;
+      border: 1.5px solid #bfdbfe;
+      border-radius: 10px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+    .bulk-bar.visible { display: flex; }
+    .bulk-count {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #1e40af;
+    }
+    .btn-send-confirm {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 9px 20px; border-radius: 8px;
+      background: #059669; color: #fff;
+      border: none; font-family: 'Inter', sans-serif;
+      font-size: 0.83rem; font-weight: 700; cursor: pointer;
+      transition: background .15s;
+    }
+    .btn-send-confirm:hover { background: #047857; }
+    .btn-send-confirm:disabled { opacity: .5; cursor: default; }
+    .btn-clear-sel {
+      background: none; border: 1.5px solid #94a3b8;
+      border-radius: 7px; padding: 7px 14px;
+      font-family: 'Inter', sans-serif; font-size: 0.80rem;
+      font-weight: 600; color: var(--muted); cursor: pointer;
+      transition: all .15s;
+    }
+    .btn-clear-sel:hover { border-color: #64748b; color: var(--text); }
+    table.dataTable .cb-col { width: 36px; text-align: center !important; padding: 0 8px !important; }
+    table.dataTable tbody td.cb-col input[type=checkbox] { width: 16px; height: 16px; cursor: pointer; accent-color: var(--accent); }
+    table.dataTable thead th.cb-col input[type=checkbox] { width: 16px; height: 16px; cursor: pointer; accent-color: #fff; }
+
     /* ── Toast notifications ── */
     #toast-container {
       position: fixed;
@@ -643,6 +683,18 @@ $activeCols = $colDefs[$tab];
     </a>
   </div>
 
+  <?php if ($tab === 'training'): ?>
+  <!-- Bulk action bar (training tab only) -->
+  <div class="bulk-bar" id="bulkBar">
+    <span class="bulk-count" id="bulkCount">0 selected</span>
+    <button class="btn-send-confirm" id="btnSendConfirm" disabled>
+      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.3" viewBox="0 0 24 24"><path d="M22 2L11 13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      Send Payment Confirmation
+    </button>
+    <button class="btn-clear-sel" id="btnClearSel">Clear selection</button>
+  </div>
+  <?php endif; ?>
+
   <!-- Table card -->
   <div class="table-card">
 
@@ -653,6 +705,8 @@ $activeCols = $colDefs[$tab];
           <?php if ($tab === 'combined'): ?>All Registrations &amp; Payments
           <?php elseif ($tab === 'leads'): ?>Registration Leads (Step 1)
           <?php elseif ($tab === 'payments'): ?>Payment Records (Step 2)
+          <?php elseif ($tab === 'stall'): ?>Stall &amp; Sponsorship Enquiries
+          <?php elseif ($tab === 'training'): ?>Hands-on Training Enrollments
           <?php else: ?>Contact Form Enquiries
           <?php endif; ?>
         </div>
@@ -711,6 +765,9 @@ $activeCols = $colDefs[$tab];
       <table id="regTable" class="dataTable">
         <thead>
           <tr>
+            <?php if ($tab === 'training'): ?>
+              <th class="cb-col no-export"><input type="checkbox" id="chkAll" title="Select all"></th>
+            <?php endif; ?>
             <?php foreach ($activeCols as $col): ?>
               <th><?= htmlspecialchars($col) ?></th>
             <?php endforeach; ?>
@@ -720,8 +777,20 @@ $activeCols = $colDefs[$tab];
           </tr>
         </thead>
         <tbody>
-          <?php foreach ($activeRows as $row): ?>
-            <tr>
+          <?php foreach ($activeRows as $idx => $row): ?>
+            <tr <?php if ($tab === 'training') echo 'class="tr-training"'; ?>>
+              <?php if ($tab === 'training'):
+                $rowJson = htmlspecialchars(json_encode([
+                    'name'         => $row['Name']              ?? '',
+                    'email'        => $row['Email']             ?? '',
+                    'mobile'       => $row['Mobile']            ?? '',
+                    'module'       => $row['Module']            ?? '',
+                    'amount'       => $row['Amount']            ?? '',
+                    'payment_ref'  => $row['Payment Reference'] ?? '',
+                    'submitted_at' => $row['Submitted At']      ?? '',
+                ]), ENT_QUOTES); ?>
+              <td class="cb-col no-export"><input type="checkbox" class="row-cb" data-row='<?= $rowJson ?>'></td>
+              <?php endif; ?>
               <?php foreach ($activeCols as $col): ?>
                 <?php
                   $val = $row[$col] ?? '';
@@ -857,6 +926,81 @@ $(function () {
       showToast('&#9888; Network error. Please try again.', 'error');
     });
   });
+
+  /* ── Training tab: checkbox select + bulk confirm ───────── */
+  (function () {
+    var bulkBar  = $('#bulkBar');
+    var bulkCnt  = $('#bulkCount');
+    var btnSend  = $('#btnSendConfirm');
+    var btnClear = $('#btnClearSel');
+
+    function getSelected() {
+      var rows = [];
+      $('.row-cb:checked').each(function () {
+        rows.push($(this).data('row'));
+      });
+      return rows;
+    }
+
+    function updateBar() {
+      var n = $('.row-cb:checked').length;
+      if (n > 0) {
+        bulkBar.addClass('visible');
+        bulkCnt.text(n + ' selected');
+        btnSend.prop('disabled', false);
+      } else {
+        bulkBar.removeClass('visible');
+        btnSend.prop('disabled', true);
+      }
+      // Sync select-all state
+      var total = $('.row-cb').length;
+      $('#chkAll').prop('indeterminate', n > 0 && n < total);
+      $('#chkAll').prop('checked', n === total && total > 0);
+    }
+
+    // Select all / deselect all
+    $(document).on('change', '#chkAll', function () {
+      $('.row-cb').prop('checked', this.checked);
+      updateBar();
+    });
+
+    // Individual checkboxes
+    $(document).on('change', '.row-cb', updateBar);
+
+    // Clear selection
+    btnClear.on('click', function () {
+      $('.row-cb, #chkAll').prop('checked', false).prop('indeterminate', false);
+      updateBar();
+    });
+
+    // Send confirmation
+    btnSend.on('click', function () {
+      var rows = getSelected();
+      if (!rows.length) return;
+      var names = rows.map(function(r){ return r.name; }).join(', ');
+      if (!confirm('Send Payment Confirmation email (with PDF) to:\n' + names + '\n\nProceed?')) return;
+
+      btnSend.prop('disabled', true).text('Sending…');
+
+      $.post('send-training-approval.php',
+        { rows: JSON.stringify(rows) },
+        function (res) {
+          btnSend.prop('disabled', false).html('<svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.3" viewBox="0 0 24 24"><path d="M22 2L11 13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send Payment Confirmation');
+          if (res.ok) {
+            showToast('&#10003; ' + res.message, 'success');
+            $('.row-cb, #chkAll').prop('checked', false);
+            updateBar();
+          } else {
+            var msg = res.errors && res.errors.length ? res.errors[0] : (res.error || 'Failed. Please try again.');
+            showToast('&#9888; ' + msg, 'error');
+          }
+        }, 'json'
+      ).fail(function () {
+        btnSend.prop('disabled', false).text('Send Payment Confirmation');
+        showToast('&#9888; Network error. Please try again.', 'error');
+      });
+    });
+  })();
 
   /* ── Wire our custom toolbar controls ── */
   $('#tblLength').on('change', function () {
