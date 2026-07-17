@@ -1055,7 +1055,19 @@ $(function () {
   $('#btnExcel').on('click', function () { table.button(1).trigger(); });
   $('#btnPdf'  ).on('click', function () { table.button(2).trigger(); });
   $('#btnPrint').on('click', function () { table.button(3).trigger(); });
-  $('#btnCols' ).on('click', function () { table.button(4).trigger(); });
+  $('#btnCols').on('click', function () {
+    table.button(4).trigger();
+    // Reposition the ColVis dropdown near our custom button
+    requestAnimationFrame(function () {
+      var $col = $('div.dt-button-collection');
+      if (!$col.length) return;
+      var rect = document.getElementById('btnCols').getBoundingClientRect();
+      var cw   = $col.outerWidth(true) || 220;
+      var left = rect.left;
+      if (left + cw > window.innerWidth - 8) left = window.innerWidth - cw - 8;
+      $col.css({ position: 'fixed', top: rect.bottom + 4, left: left, right: 'auto', zIndex: 9999 });
+    });
+  });
 
   /* ── Render custom info + pagination after every draw ── */
   function renderFooter() {
